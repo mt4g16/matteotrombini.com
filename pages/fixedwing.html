@@ -1,243 +1,300 @@
 <!DOCTYPE html>
 
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <meta charset="utf-8">
-        <title>Fixed-Wing UAV</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/fixedwing.css">
-        <script src="https://kit.fontawesome.com/ee9f430454.js" crossorigin="anonymous"></script>    
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
-    </head>
-    <body id="page_type1">
-        <div class="grid_wrapper">
-            <nav>
-                <div class="nav_wrapper">
-                    <div id="logo">
-                        <a href='../index.html'>Matteo Trombini</a>
-                    </div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                    <div class="nav_buttons", id="menu">
-                        <div class="nav_dropdown">
-                            <button class="nav_dropbtn">Navigation</button>
-                            <div class="nav_dropdown_content">
+<head>
+    <meta charset="utf-8">
+    <title>Fixed-Wing UAV</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/fixedwing.css">
+    <script src="https://kit.fontawesome.com/ee9f430454.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body id="page_type1">
+    <div class="grid_wrapper">
+        <nav>
+            <div class="nav_wrapper">
+                <div id="logo">
+                    <a href='../index.html'>Matteo Trombini</a>
+                </div>
+
+                <div class="nav_buttons" , id="menu">
+                    <div class="nav_dropdown">
+                        <button class="nav_dropbtn">Navigation</button>
+                        <div class="nav_dropdown_content">
                             <a href="bio.html">Bio</a>
                             <a href="projects.html">Projects</a>
                             <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
-                            </div>
                         </div>
-
-                        <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
-                        <a class="active" href="CV_MTrombini.pdf">CV/Résumé</a>
                     </div>
 
-                    <i class="material-icons", id="menu_bars", class="menu_bars" onclick="menu()">menu</i>
-                </div>
-
-                <div class="mobile_dropdown">
                     <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
-                    <a class="active" href="#CV">CV/Résumé</a>
-                    <a class="active" href="bio.html">Bio</a>
-                    <a class="active" href="projects.html">Projects</a>
-                    <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </div>     
-            </nav>
-
-            <div class="content_fixedwing">
-                <div class="page_title_fixedwing">
-                    Fixed-Wing UAV | Design & Build
+                    <a class="active" href="../CV_MTrombini.pdf">CV/Résumé</a>
                 </div>
 
-                <div class="page_content_fixedwing">
-
-                    <figure>
-                        <img src="fixedwing_imgs/splash_image.jpg" alt="" class="width100">
-                    </figure>
-
-                    <h1>Overview</h1>
-                    <p> In short, the challenge of this project was to conceptualize and design a lightweight remote controlled unmanned aerial vehicle (UAV) that satisfied a set of predefined design conditions.  The two goals of which were:
-                    <ul>
-                        <li>to design a set of aerodynamic surfaces for an existing propulsion and fuselage system</li>
-                        <li>the performance goal is to provide the aircraft with the maximum speed range</li>
-                    </ul>
-                    <figure>
-                        <img src="fixedwing_imgs/Fuselage_System.jpg" alt="" class="width80">
-                        <figcaption>Existing fuselage system</figcaption>
-                    </figure>
-                    In addition to being an intensive design activity, the project had a large focus on teamwork, delegation of tasks, and proper design process documenting.</p> 
-
-                    <h1>Aerodynamic Calculations</h1>
-                    <p>Designing the aircraft vaguely fell into 3 categories: electronics & avionics, aerodynamic analysis, and structural and material analysis.</p> 
-
-                    <p>The section I chose to lead was the aerodynamic analysis as it was where I could best apply my knowledge of Python and flight mechanics, but still have a part in the physical design of the aircraft.</p>
-                    
-                    <p>The eventual flight tests the aircraft would undergo (the performance of which would determine the score the aircraft received) were as follows:
-                    <ol>
-                        <li>High speed flight</li>
-                        <li>Stall and low speed flight</li>
-                    </ol>
-                    Keeping these in mind and at the top of the priority list in terms of ideal design, an initial conceptualization of the aircraft wing cold be made.</p>
-  
-
-                    <div class="row">
-                        <div class="column">
-                          <img src="fixedwing_imgs/CD_V.png" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="fixedwing_imgs/CL_CD.png" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="fixedwing_imgs/CL_V.png" alt="" style="width:100%">
-                        </div>
-                    </div>
-                    <figcaption>Constraint plots from left to right: Coefficient of Drag to Velocity; Coefficient of Lift to Velocity; CL vs CD</figcaption>
-
-                    <p>The constraint plots above show the very first analyses that were done to find ranges for the allowable coefficients of drag and lift. These were based off of some specified aircraft values, such as mass (1.5kg) and wing span (1.8m).</p>
-
-                    
-                    <p>From these plots, a minimum desired flight velocity was selected, and from there, a desired minimum CL... and from there, we could begin selecting our airfoil shape. This was done in part by narrowing down the search results from a large database of airfoils using the information we calculated from the plots. In addition to that, we tried to identify the airfoils with the highest lift-to-drag ratios, greatest thicknesses (to maximize manufacturing feasibility), and have the highest stall angle possible. This would allow the aircraft to fly efficiently at low speeds; one of the two design goals. We realized early on, from provided engine thrust data, that we would effectively never be limited by available engine power. In other words, electric motors have such a high power to weight ratios nowadays that a relatively small RC plane will not produce enough drag to actually slow down the plane. Armed with this assumption, we decided to focus on low-speed performance. </p>
-
-                    <div class="row">
-                        <div class="column">
-                          <img src="fixedwing_imgs/A1.png" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="fixedwing_imgs/A2.png" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="fixedwing_imgs/A3.png" alt="" style="width:100%">
-                        </div>
-                    </div>
-                    
-                    <p>This lead to the selection of the  Wortmann FX 60-126.</p>
-
-                    <h1>Conceptual Design</h1>
-                    <p>The next aerodynamic challenge was to improve lift distribution. This is done by approximating an elliptical wing distribution (most famously seen in the WWII Spitfire). Due to manufacturing constraints, building a double-curvature wing out of foam would not have been possible given the equipment we had available to us. So our approximation was to be done by adding a semi-taper to the wing. We briefly looked into adding twist as well, but the additional manufacturing complication simply meant it was not worth it. </p>
-
-                    <figure>
-                        <img src="fixedwing_imgs/WingTaper.png" alt="" class="width80">
-                        <figcaption>Schematic of the proposed semi-taper dimensions</figcaption>
-                    </figure>
-
-                    <p>I conducted this analysis using a python script that would iterate through every possible semi-taper starting position (labelled as a in the above diagram). The tip chord (C_tip) also had to be taken into consideration, as values below (what we decided) 10cm would be too small to manufacture and/or sustain useful loads. This factor would become especially important later on in the structural integrity testing phase. </p>
-
-                    <figure>
-                        <img src="fixedwing_imgs/TaperLift.png" alt="" class="width50">
-                        <figcaption>To better visualize what's going on, the plot on the left shows (in orange) what an ideal lift distribution looks like on a wing. In blue, is the lift distribution of a wing with a continues taper from root to tip. If the wing were a constant chord (i.e. just a rectangle) the distribution would also be constant (ignoring wing tip vortex effects etc.)</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="fixedwing_imgs/TaperCode.png" alt="" class="width50">
-                        <figcaption>An excerpt of the code used to iterate through the taper start positions.</figcaption>
-                    </figure>
-
-                    <p>Above is part of the code that was used to determine the best possible lift distribution given a linear semi-taper. The script iterated through all a positions and calculated an area of the curve. If it was not within 0.001m2 of ideal elliptical area (16.235m2) it was rejected.</p>
-
-                    <div class="row">
-                        <div class="column">
-                          <img src="fixedwing_imgs/TaperIterations.png" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="fixedwing_imgs/TaperConstraints.png" alt="" style="width:100%">
-                        </div>
-                    </div>
-                    <figcaption>Plots left to right: An extract of the iterated semi-taper starting positions and their associated lift distributions; constraint plot linking taper starting position and wing tip chord.</figcaption>
-
-                    <p>Finally, the semi-tapers that resulted in a close approximation of the ideal lift distribution area were plotted on the graph (right) above - in addition to certain manufacturing constraints. This created a range to choose from; the final decision was a compromise between an aerodynamic ideal and manufacturability. </p>
-
-                    <figure>
-                        <img src="fixedwing_imgs/Twist.png" alt="" class="width50">
-                        <figcaption>As a side note: this plot was the predicted lift distribution for a wing with twist. Although it clearly approximated the ideal more closely, creating a smooth rotation would have been infeasible at this scale, and seriously compromised the structural integrity of the wing.</figcaption>
-                    </figure>
-
-                    <p>With all major design decision relating to the aerodynamics of the wing having been made, we started making CAD models of our design. </p>
-
-                    <div class="row">
-                        <div class="column" style="padding: 5px;">
-                          <img src="fixedwing_imgs/WingCAD1.png" alt="" style="width:100%" >
-                        </div>
-                        <div class="column" style="padding: 5px;">
-                          <img src="fixedwing_imgs/WingCAD2.png" alt="" style="width:100%">
-                        </div>
-                    </div>
-                    <figcaption>CAD of internal wing section</figcaption>
-
-                    <h1>Manufacturing and Final Calculations</h1>
-                    <p>Shortly after, using the material analysis completed by another team member, we started manufacturing prototypes of the wing sections to conduct preliminary structural tests. </p>
-
-                    <figure>
-                        <img src="fixedwing_imgs/Prototype1.jpg" alt="" class="width80">
-                        <figcaption>First prototype of wing</figcaption>
-                    </figure>
-                    <p>It was at this point that we realized twist would have been very difficult to implement, and the idea was abandoned completely. </p>
-                    <p>The final aerodynamic calculation that I had to complete at this stage was the aileron moment calculations, in other words, how big the ailerons had to be to successfully roll the aircraft. </p>
-                    <figure>
-                        <img src="fixedwing_imgs/AileronCalc.png" alt="" class="width80">
-                    </figure>
-                    <p>The time needed to roll 30 degrees was calculated to be 1.6 seconds, at the approach speed (the slowest speed the aircraft should have to fly at in normal conditions). This value was judged to be acceptable. </p>
-                    <figure>
-                        <img src="fixedwing_imgs/WingCAD4.png" alt="" class="width80">
-                    </figure>
-                    <p>After some more revisions to the CAD, we include finer details such as how the spar would integrate into the structure, where the wiring would pass through, where servos would mount to, and how the three sections of the wing would connect together. </p>
-
-                    <h1>Assembly</h1>
-                    <p>Finally we started assembling the wing:</p>
-                    <figure>
-                        <img src="fixedwing_imgs/build5.jpg" alt="" class="width80">
-                        <figcaption>The wing close to its final stages of construction.</figcaption>
-                    </figure>
-
-                    <div class="row">
-                        <div class="column">
-                          <img src="fixedwing_imgs/build1.jpg" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="fixedwing_imgs/build2.jpg" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="fixedwing_imgs/build3.jpg" alt="" style="width:100%">
-                        </div>
-                    </div>
-
-                    <p>The final step was to wrap the wing in heat-shrink Mylar to protect it from rain and to ensure as smooth an airflow as possible.</p>
-
-                    <h1>Flight Day</h1>
-                    <p>The day finally came to test the aircraft in flight. The stakes were high as we only had one chance to try it, and we were not allowed to test it prior to this day. So... we were extremely happy when our plane flew perfectly; an enormous satisfaction after months of work.</p>
-                    
-                    <figure>
-                        <img src="fixedwing_imgs/final1.jpg" alt="" class="width80">              
-                    </figure>
-                    <figure>
-                        <img src="fixedwing_imgs/final2.jpg" alt="" class="width80">                     
-                    </figure>
-                    <figure>
-                        <img src="fixedwing_imgs/final3.jpg" alt="" class="width80">                        
-                    </figure>
-                    <figure>
-                        <img src="fixedwing_imgs/final4.jpg" alt="" class="width80">
-                    </figure>
-                    <hr>
-                    <figure>
-                        <img src="fixedwing_imgs/crash.jpg" alt="" class="width80">
-                        <figcaption>Others weren't so lucky...</figcaption>
-                    </figure>
-                </div>
+                <i class="material-icons" , id="menu_bars" , class="menu_bars" onclick="menu()">menu</i>
             </div>
 
-            <div class="footer">
-                <div class="footer_links">
-                    <a href="mailto: trombinimatteo@gmail.com"><i class="fas fa-at fa-lg"></i></a>
-                    <a href="https://www.linkedin.com/in/trombinimatteo" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fa-lg"></i></a>
-                    <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-lg"></i></a>
-                </div>
+            <div class="mobile_dropdown">
+                <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
+                <a class="active" href="../CV_MTrombini.pdf">CV/Résumé</a>
+                <a class="active" href="bio.html">Bio</a>
+                <a class="active" href="projects.html">Projects</a>
+                <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
-            
+        </nav>
+
+        <div class="content_fixedwing">
+            <div class="page_title_fixedwing">
+                Fixed-Wing UAV | Design & Build
+            </div>
+
+            <div class="page_content_fixedwing">
+
+                <figure>
+                    <img src="fixedwing_imgs/splash_image.jpg" alt="" class="width100">
+                </figure>
+
+                <h1>Overview</h1>
+                <p> In short, the challenge of this project was to conceptualize and design a lightweight remote
+                    controlled unmanned aerial vehicle (UAV) that satisfied a set of predefined design conditions. The
+                    two goals of which were:
+                <ul>
+                    <li>to design a set of aerodynamic surfaces for an existing propulsion and fuselage system</li>
+                    <li>the performance goal is to provide the aircraft with the maximum speed range</li>
+                </ul>
+                <figure>
+                    <img src="fixedwing_imgs/Fuselage_System.jpg" alt="" class="width80">
+                    <figcaption>Existing fuselage system</figcaption>
+                </figure>
+                In addition to being an intensive design activity, the project had a large focus on teamwork, delegation
+                of tasks, and proper design process documenting.</p>
+
+                <h1>Aerodynamic Calculations</h1>
+                <p>Designing the aircraft vaguely fell into 3 categories: electronics & avionics, aerodynamic analysis,
+                    and structural and material analysis.</p>
+
+                <p>The section I chose to lead was the aerodynamic analysis as it was where I could best apply my
+                    knowledge of Python and flight mechanics, but still have a part in the physical design of the
+                    aircraft.</p>
+
+                <p>The eventual flight tests the aircraft would undergo (the performance of which would determine the
+                    score the aircraft received) were as follows:
+                <ol>
+                    <li>High speed flight</li>
+                    <li>Stall and low speed flight</li>
+                </ol>
+                Keeping these in mind and at the top of the priority list in terms of ideal design, an initial
+                conceptualization of the aircraft wing cold be made.</p>
+
+
+                <div class="row">
+                    <div class="column">
+                        <img src="fixedwing_imgs/CD_V.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="fixedwing_imgs/CL_CD.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="fixedwing_imgs/CL_V.png" alt="" style="width:100%">
+                    </div>
+                </div>
+                <figcaption>Constraint plots from left to right: Coefficient of Drag to Velocity; Coefficient of Lift to
+                    Velocity; CL vs CD</figcaption>
+
+                <p>The constraint plots above show the very first analyses that were done to find ranges for the
+                    allowable coefficients of drag and lift. These were based off of some specified aircraft values,
+                    such as mass (1.5kg) and wing span (1.8m).</p>
+
+
+                <p>From these plots, a minimum desired flight velocity was selected, and from there, a desired minimum
+                    CL... and from there, we could begin selecting our airfoil shape. This was done in part by narrowing
+                    down the search results from a large database of airfoils using the information we calculated from
+                    the plots. In addition to that, we tried to identify the airfoils with the highest lift-to-drag
+                    ratios, greatest thicknesses (to maximize manufacturing feasibility), and have the highest stall
+                    angle possible. This would allow the aircraft to fly efficiently at low speeds; one of the two
+                    design goals. We realized early on, from provided engine thrust data, that we would effectively
+                    never be limited by available engine power. In other words, electric motors have such a high power
+                    to weight ratios nowadays that a relatively small RC plane will not produce enough drag to actually
+                    slow down the plane. Armed with this assumption, we decided to focus on low-speed performance. </p>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="fixedwing_imgs/A1.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="fixedwing_imgs/A2.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="fixedwing_imgs/A3.png" alt="" style="width:100%">
+                    </div>
+                </div>
+
+                <p>This lead to the selection of the Wortmann FX 60-126.</p>
+
+                <h1>Conceptual Design</h1>
+                <p>The next aerodynamic challenge was to improve lift distribution. This is done by approximating an
+                    elliptical wing distribution (most famously seen in the WWII Spitfire). Due to manufacturing
+                    constraints, building a double-curvature wing out of foam would not have been possible given the
+                    equipment we had available to us. So our approximation was to be done by adding a semi-taper to the
+                    wing. We briefly looked into adding twist as well, but the additional manufacturing complication
+                    simply meant it was not worth it. </p>
+
+                <figure>
+                    <img src="fixedwing_imgs/WingTaper.png" alt="" class="width80">
+                    <figcaption>Schematic of the proposed semi-taper dimensions</figcaption>
+                </figure>
+
+                <p>I conducted this analysis using a python script that would iterate through every possible semi-taper
+                    starting position (labelled as a in the above diagram). The tip chord (C_tip) also had to be taken
+                    into consideration, as values below (what we decided) 10cm would be too small to manufacture and/or
+                    sustain useful loads. This factor would become especially important later on in the structural
+                    integrity testing phase. </p>
+
+                <figure>
+                    <img src="fixedwing_imgs/TaperLift.png" alt="" class="width50">
+                    <figcaption>To better visualize what's going on, the plot on the left shows (in orange) what an
+                        ideal lift distribution looks like on a wing. In blue, is the lift distribution of a wing with a
+                        continues taper from root to tip. If the wing were a constant chord (i.e. just a rectangle) the
+                        distribution would also be constant (ignoring wing tip vortex effects etc.)</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="fixedwing_imgs/TaperCode.png" alt="" class="width50">
+                    <figcaption>An excerpt of the code used to iterate through the taper start positions.</figcaption>
+                </figure>
+
+                <p>Above is part of the code that was used to determine the best possible lift distribution given a
+                    linear semi-taper. The script iterated through all a positions and calculated an area of the curve.
+                    If it was not within 0.001m2 of ideal elliptical area (16.235m2) it was rejected.</p>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="fixedwing_imgs/TaperIterations.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="fixedwing_imgs/TaperConstraints.png" alt="" style="width:100%">
+                    </div>
+                </div>
+                <figcaption>Plots left to right: An extract of the iterated semi-taper starting positions and their
+                    associated lift distributions; constraint plot linking taper starting position and wing tip chord.
+                </figcaption>
+
+                <p>Finally, the semi-tapers that resulted in a close approximation of the ideal lift distribution area
+                    were plotted on the graph (right) above - in addition to certain manufacturing constraints. This
+                    created a range to choose from; the final decision was a compromise between an aerodynamic ideal and
+                    manufacturability. </p>
+
+                <figure>
+                    <img src="fixedwing_imgs/Twist.png" alt="" class="width50">
+                    <figcaption>As a side note: this plot was the predicted lift distribution for a wing with twist.
+                        Although it clearly approximated the ideal more closely, creating a smooth rotation would have
+                        been infeasible at this scale, and seriously compromised the structural integrity of the wing.
+                    </figcaption>
+                </figure>
+
+                <p>With all major design decision relating to the aerodynamics of the wing having been made, we started
+                    making CAD models of our design. </p>
+
+                <div class="row">
+                    <div class="column" style="padding: 5px;">
+                        <img src="fixedwing_imgs/WingCAD1.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column" style="padding: 5px;">
+                        <img src="fixedwing_imgs/WingCAD2.png" alt="" style="width:100%">
+                    </div>
+                </div>
+                <figcaption>CAD of internal wing section</figcaption>
+
+                <h1>Manufacturing and Final Calculations</h1>
+                <p>Shortly after, using the material analysis completed by another team member, we started manufacturing
+                    prototypes of the wing sections to conduct preliminary structural tests. </p>
+
+                <figure>
+                    <img src="fixedwing_imgs/Prototype1.jpg" alt="" class="width80">
+                    <figcaption>First prototype of wing</figcaption>
+                </figure>
+                <p>It was at this point that we realized twist would have been very difficult to implement, and the idea
+                    was abandoned completely. </p>
+                <p>The final aerodynamic calculation that I had to complete at this stage was the aileron moment
+                    calculations, in other words, how big the ailerons had to be to successfully roll the aircraft. </p>
+                <figure>
+                    <img src="fixedwing_imgs/AileronCalc.png" alt="" class="width80">
+                </figure>
+                <p>The time needed to roll 30 degrees was calculated to be 1.6 seconds, at the approach speed (the
+                    slowest speed the aircraft should have to fly at in normal conditions). This value was judged to be
+                    acceptable. </p>
+                <figure>
+                    <img src="fixedwing_imgs/WingCAD4.png" alt="" class="width80">
+                </figure>
+                <p>After some more revisions to the CAD, we include finer details such as how the spar would integrate
+                    into the structure, where the wiring would pass through, where servos would mount to, and how the
+                    three sections of the wing would connect together. </p>
+
+                <h1>Assembly</h1>
+                <p>Finally we started assembling the wing:</p>
+                <figure>
+                    <img src="fixedwing_imgs/build5.jpg" alt="" class="width80">
+                    <figcaption>The wing close to its final stages of construction.</figcaption>
+                </figure>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="fixedwing_imgs/build1.jpg" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="fixedwing_imgs/build2.jpg" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="fixedwing_imgs/build3.jpg" alt="" style="width:100%">
+                    </div>
+                </div>
+
+                <p>The final step was to wrap the wing in heat-shrink Mylar to protect it from rain and to ensure as
+                    smooth an airflow as possible.</p>
+
+                <h1>Flight Day</h1>
+                <p>The day finally came to test the aircraft in flight. The stakes were high as we only had one chance
+                    to try it, and we were not allowed to test it prior to this day. So... we were extremely happy when
+                    our plane flew perfectly; an enormous satisfaction after months of work.</p>
+
+                <figure>
+                    <img src="fixedwing_imgs/final1.jpg" alt="" class="width80">
+                </figure>
+                <figure>
+                    <img src="fixedwing_imgs/final2.jpg" alt="" class="width80">
+                </figure>
+                <figure>
+                    <img src="fixedwing_imgs/final3.jpg" alt="" class="width80">
+                </figure>
+                <figure>
+                    <img src="fixedwing_imgs/final4.jpg" alt="" class="width80">
+                </figure>
+                <hr>
+                <figure>
+                    <img src="fixedwing_imgs/crash.jpg" alt="" class="width80">
+                    <figcaption>Others weren't so lucky...</figcaption>
+                </figure>
+            </div>
         </div>
-    </body>
 
-    <script src="../scripts/dropdown_menu.js"></script>
+        <div class="footer">
+            <div class="footer_links">
+                <a href="mailto: trombinimatteo@gmail.com"><i class="fas fa-at fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/trombinimatteo" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-github-alt fa-lg"></i></a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script src="../scripts/dropdown_menu.js"></script>
 
 </html>

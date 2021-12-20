@@ -1,6 +1,6 @@
 
 .content_bio {
-    background: white;
+    background: var(--gray-color);
     display: grid;
     grid-template-columns: 25vw auto;
     grid-template-rows: 15vh auto;
@@ -44,8 +44,8 @@ img {
 }
 
 .infobox_title {
-    background-color: lightblue;
-    border: solid 3px blue;
+    background-color: var(--lightblue-color);
+    border: solid 3px var(--blue-color);
     padding: 10px;
     margin: 3px;
     margin-bottom: 0px;
@@ -56,8 +56,8 @@ img {
     }
 
 .infobox_content {
-    background-color: white;
-    border: solid 3px lightgray;
+    background-color: var(--white-color);
+    border: solid 3px var(--gray-color);
     border-top: none;
     padding: 10px;
     margin: 3px;
@@ -88,7 +88,6 @@ img {
     margin-top: 2.5vw;
     font-size: 8vh;
     display: inline;
-    background-image: linear-gradient(#fff 60%, #A9D18E 55%);    
 }
 
 .infobox_wrapper {

@@ -1,8 +1,24 @@
+:root {
+    --black-color: black;
+    --white-color: white;
+    --space-color:rgb(41, 40, 40);
+    --lightgray-color: #979797;
+    --offwhite-color: #E7E6E6;
+    --gray-color: #c2bbbb;
+    --green-color: #6a9749;
+    --yellow-color: #c4a64b;
+    --blue-color: #4174a7;
+    --lightblue-color: #778ceb;
+    --lightred-color: #eb7777;
+
+}
+
+
 /* Page Setup and Universal Settings */
 html, body { margin: 0; padding: 0; }
 
 canvas { 
-    background: rgb(41, 40, 40); 
+    background: var(--space-color); 
     position:absolute;
     left:0;
     top:0;
@@ -11,10 +27,11 @@ canvas {
 
 body {font-family: "Lucida Console";}
 
-        #page_type0 {background: #E7E6E6;}
-        #page_type2 {background: #E7E6E6;}
+        #page_type0 {background: var(--offwhite-color);}
+        #page_type1 {background: var(--gray-color);}
+        #page_type2 {background: var(--gray-color);}
 
-a { text-decoration: none; color:black; }
+a { text-decoration: none; color: var(--black-color); }
 a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
@@ -36,8 +53,21 @@ a:hover, a:active { text-decoration: none; }
     user-select: none;
 }
 
+#logo2 {
+    font-size: calc(20px + 1.3vw);
+    padding-top: 4vh;
+    padding-left: 3.5vw;
+    user-select: none;
+}
+
+#logo a {
+    color: var(--lightgray-color);
+    /* background-color: rgba(255, 255, 255, 0.288); */
+    /* padding: 3px; */
+}
+
 #menu {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--black-color);
     height: 40px;
     
 }
@@ -51,7 +81,7 @@ a:hover, a:active { text-decoration: none; }
 .nav_wrapper{
     display: grid;
     grid-auto-flow: column;
-    background: #E7E6E6;
+    background: var(--space-color);
 }
 
 .nav_wrapper2{
@@ -105,26 +135,26 @@ a:hover, a:active { text-decoration: none; }
 /* Mobile-only hamburger menu */
 nav .mobile_dropdown {
     display: none;
-    background-color: darkgray;
+    background-color: var(--lightgray-color);
     text-align: center;
 }
 
     nav .mobile_dropdown a{
-        color: white;
+        color: var(--white-color);
         padding: 30px;
     }
 
     nav .mobile_dropdown a:hover{
-        color: white;
-        background-color: #9DC3E6;
+        color: var(--white-color);
+        background-color: var(--lightblue-color);
     }
 
 
 
 /* page_type1 (content page) Navbar Dropdown Menu */
 .nav_dropbtn {
-    background-color: #9DC3E6;
-    color: black;
+    background-color: var(--blue-color);
+    color: var(--black-color);
     padding: 10px;
     font-size: 16px;
     border: none;
@@ -140,28 +170,28 @@ nav .mobile_dropdown {
     .nav_dropdown_content {
         display: none;
         position: absolute;
-        background-color: #f9f9f9;
+        background-color: var(--white-color);
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
     
     .nav_dropdown_content a {
-        color: black;
+        color: var(--black-color);
         padding: 12px 16px;
         text-decoration: none;
         display: block;
     }
     
-    .nav_dropdown_content a:hover {background-color: #f1f1f1}
+    .nav_dropdown_content a:hover {background-color: var(--white-color)}
     
     .nav_dropdown:hover .nav_dropdown_content {
         display: block;
     }
     
     .nav_dropdown:hover .nav_dropbtn {
-        background-color: #77a7eb;
-        color: white;
+        background-color: var(--lightblue-color);
+        color: var(--white-color);
     }
 
 
@@ -174,7 +204,7 @@ nav .mobile_dropdown {
 }
 
     #page_type1 .footer {
-        background: white;
+        background: var(--gray-color);
     }
 
 .footer div {
@@ -212,8 +242,8 @@ nav .mobile_dropdown {
 
 .btn {
     border: none;
-    background-color: white;
-    color: black;
+    background-color: var(--white-color);
+    color: var(--black-color);
     padding: 14px 28px;
     font-size: calc(10px + 0.8vw);
     cursor: pointer;
@@ -221,15 +251,15 @@ nav .mobile_dropdown {
   }
 
 .bio {
-    background-color: #6a9749;
+    background-color: var(--green-color);
 }
 
 .proj {
-    background-color: #c4a64b;
+    background-color: var(--yellow-color);
 }
 
 .code {
-    background-color: #4174a7;
+    background-color: var(--blue-color);
 }
 
 /* Screen size adjustment */

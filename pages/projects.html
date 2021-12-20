@@ -1,114 +1,126 @@
 <!DOCTYPE html>
 
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <meta charset="utf-8">
-        <title>Projects</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/projects.css">
-        <script src="https://kit.fontawesome.com/ee9f430454.js" crossorigin="anonymous"></script>    
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="../css/fadein.css">
-    </head>
-    <body id="page_type2">
-        <div class="grid_wrapper">
-            <nav>
-                <div class="nav_wrapper">
-                    <div id="logo">
-                        <a href='../index.html'>Matteo Trombini</a>
-                    </div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                    <div class="nav_buttons", id="menu">
-                        <div class="nav_dropdown">
-                            <button class="nav_dropbtn">Navigation</button>
-                            <div class="nav_dropdown_content">
+<head>
+    <meta charset="utf-8">
+    <title>Projects</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <script src="https://kit.fontawesome.com/ee9f430454.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../css/fadein.css">
+</head>
+
+<body id="page_type2">
+    <div class="grid_wrapper">
+        <nav>
+            <div class="nav_wrapper">
+                <div id="logo">
+                    <a href='../index.html'>Matteo Trombini</a>
+                </div>
+
+                <div class="nav_buttons" , id="menu">
+                    <div class="nav_dropdown">
+                        <button class="nav_dropbtn">Navigation</button>
+                        <div class="nav_dropdown_content">
                             <a href="bio.html">Bio</a>
                             <a href="#">Projects</a>
                             <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
-                            </div>
                         </div>
-
-                        <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
-                        <a class="active" href="CV_MTrombini.pdf">CV/Résumé</a>
                     </div>
 
-                    <i class="material-icons", id="menu_bars", class="menu_bars" onclick="menu()">menu</i>
-                </div>
-
-                <div class="mobile_dropdown">
                     <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
-                    <a class="active" href="#CV">CV/Résumé</a>
-                    <a class="active" href="bio.html">Bio</a>
-                    <a class="active" href="#CV">Projects</a>
-                    <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </div>     
-            </nav>
-
-            <div class="projects_wrapper">
-                <div class="projects_PageTitle">
-                    Projects Overview
+                    <a class="active" href="../CV_MTrombini.pdf">CV/Résumé</a>
                 </div>
 
-                <div class="projects_snippets">
-                    <div id="ps_prompt">
-                        <div>Hover over one of the titles to see a description of the project.</div>
-                    </div>
+                <i class="material-icons" , id="menu_bars" , class="menu_bars" onclick="menu()">menu</i>
+            </div>
 
-                    <div id="p1s" class="fade-in">
-                        <img src="../images/fw1.jpg" alt="">
-                        <p class="snippet_blurb">Second year group project. I calculated wing semi-taper location, twist angle, and aileron dimensions as well as determined the optimal aerofoil, using ANSYS CFD analysis. Implemented  flight mechanics and aerodynamic principles into Python.</p>
-                    </div>
+            <div class="mobile_dropdown">
+                <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
+                <a class="active" href="../CV_MTrombini.pdf">CV/Résumé</a>
+                <a class="active" href="bio.html">Bio</a>
+                <a class="active" href="#CV">Projects</a>
+                <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </nav>
 
-                    <div id="p2s" class="fade-in">
-                        <img src="../images/cs1.JPG" alt="">
-                        <p class="snippet_blurb">Full year team design project to design a compact CanSat system according to stringent requirements. As mechanical design team lead I lead the development and prototyping of the final product. In the summer of 2019 we competed in Dallas, Texas.</p>
-                    </div>
+        <div class="projects_wrapper">
+            <div class="projects_PageTitle">
+                Projects Overview
+            </div>
 
-                    <div id="p3s" class="fade-in">
-                        <img src="../images/to1.png" alt="">
-                        <p class="snippet_blurb">An implementation of the simplex method to solve a hypothetical school council transportation problem.</p>
-                    </div>
+            <div class="projects_snippets">
+                <div id="ps_prompt">
+                    <div>Hover over one of the titles to see a description of the project.</div>
                 </div>
 
-                <div class="projects_titles">
-                    <h2>University Projects</h2>
-                    <div class="p_title" onmouseover="show('p1s')" onmouseout="hide('p1s')" onclick="location.href='fixedwing.html';">
-                        <div>Fixed-Wing Aircraft</div>
-                    </div>
+                <div id="p1s" class="fade-in">
+                    <img src="../images/fw1.jpg" alt="">
+                    <p class="snippet_blurb">Second year group project. I calculated wing semi-taper location, twist
+                        angle, and aileron dimensions as well as determined the optimal aerofoil, using ANSYS CFD
+                        analysis. Implemented flight mechanics and aerodynamic principles into Python.</p>
+                </div>
 
-                    <div class="p_title" onmouseover="show('p2s')" onmouseout="hide('p2s')" onclick="location.href='cansat.html';">
-                        <div>CanSat Texas 2019</div>
-                    </div>
+                <div id="p2s" class="fade-in">
+                    <img src="../images/cs1.JPG" alt="">
+                    <p class="snippet_blurb">Full year team design project to design a compact CanSat system according
+                        to stringent requirements. As mechanical design team lead I lead the development and prototyping
+                        of the final product. In the summer of 2019 we competed in Dallas, Texas.</p>
+                </div>
 
-                    <div class="p_title" onmouseover="show('p3s')" onmouseout="hide('p3s')" onclick="location.href='transport.html';">
-                        <div>Transportation Optimization</div>
-                    </div>
+                <div id="p3s" class="fade-in">
+                    <img src="../images/to1.png" alt="">
+                    <p class="snippet_blurb">An implementation of the simplex method to solve a hypothetical school
+                        council transportation problem.</p>
                 </div>
             </div>
 
-            <div class="footer">
-                <div class="footer_links">
-                    <a href="mailto: trombinimatteo@gmail.com"><i class="fas fa-at fa-lg"></i></a>
-                    <a href="https://www.linkedin.com/in/trombinimatteo" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fa-lg"></i></a>
-                    <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-lg"></i></a>
+            <div class="projects_titles">
+                <h2>University Projects</h2>
+                <div class="p_title" onmouseover="show('p1s')" onmouseout="hide('p1s')"
+                    onclick="location.href='fixedwing.html';">
+                    <div>Fixed-Wing Aircraft</div>
+                </div>
+
+                <div class="p_title" onmouseover="show('p2s')" onmouseout="hide('p2s')"
+                    onclick="location.href='cansat.html';">
+                    <div>CanSat Texas 2019</div>
+                </div>
+
+                <div class="p_title" onmouseover="show('p3s')" onmouseout="hide('p3s')"
+                    onclick="location.href='transport.html';">
+                    <div>Transportation Optimization</div>
                 </div>
             </div>
         </div>
-    </body>
 
-    <script src="../scripts/dropdown_menu.js"></script>
+        <div class="footer">
+            <div class="footer_links">
+                <a href="mailto: trombinimatteo@gmail.com"><i class="fas fa-at fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/trombinimatteo" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-github-alt fa-lg"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
 
-    <script>
-        function show(x) {
-                    document.getElementById(x).style.display = "block";
-                    document.getElementById('ps_prompt').style.display = "none";
-                }
-                
-        function hide(x) {
-                    document.getElementById(x).style.display = "none";
-                    document.getElementById('ps_prompt').style.display = "block";
-                }
-    </script>
+<script src="../scripts/dropdown_menu.js"></script>
+
+<script>
+    function show(x) {
+        document.getElementById(x).style.display = "block";
+        document.getElementById('ps_prompt').style.display = "none";
+    }
+
+    function hide(x) {
+        document.getElementById(x).style.display = "none";
+        document.getElementById('ps_prompt').style.display = "block";
+    }
+</script>
 
 </html>

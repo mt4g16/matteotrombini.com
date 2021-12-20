@@ -10,10 +10,10 @@
 
 
 .projects_PageTitle {
-    font-size: 4vh;
+    color: var(--black-color);
+    font-size: 6vh;
     margin: 2vw 3.5vw;
     padding: 15px 40px 10px 0;
-    background-image: linear-gradient(transparent 60%, #FFD966 55%);
 
     white-space: nowrap;
     overflow: hidden;

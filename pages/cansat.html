@@ -1,238 +1,281 @@
 <!DOCTYPE html>
 
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <meta charset="utf-8">
-        <title>CanSat 2019</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/cansat.css">
-        <script src="https://kit.fontawesome.com/ee9f430454.js" crossorigin="anonymous"></script>    
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
-    </head>
-    <body id="page_type1">
-        <div class="grid_wrapper">
-            <nav>
-                <div class="nav_wrapper">
-                    <div id="logo">
-                        <a href='../index.html'>Matteo Trombini</a>
-                    </div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                    <div class="nav_buttons", id="menu">
-                        <div class="nav_dropdown">
-                            <button class="nav_dropbtn">Navigation</button>
-                            <div class="nav_dropdown_content">
+<head>
+    <meta charset="utf-8">
+    <title>CanSat 2019</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cansat.css">
+    <script src="https://kit.fontawesome.com/ee9f430454.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body id="page_type1">
+    <div class="grid_wrapper">
+        <nav>
+            <div class="nav_wrapper">
+                <div id="logo">
+                    <a href='../index.html'>Matteo Trombini</a>
+                </div>
+
+                <div class="nav_buttons" , id="menu">
+                    <div class="nav_dropdown">
+                        <button class="nav_dropbtn">Navigation</button>
+                        <div class="nav_dropdown_content">
                             <a href="bio.html">Bio</a>
                             <a href="projects.html">Projects</a>
                             <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
-                            </div>
                         </div>
-
-                        <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
-                        <a class="active" href="CV_MTrombini.pdf">CV/Résumé</a>
                     </div>
 
-                    <i class="material-icons", id="menu_bars", class="menu_bars" onclick="menu()">menu</i>
-                </div>
-
-                <div class="mobile_dropdown">
                     <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
-                    <a class="active" href="#CV">CV/Résumé</a>
-                    <a class="active" href="bio.html">Bio</a>
-                    <a class="active" href="projects.html">Projects</a>
-                    <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </div>     
-            </nav>
-
-            <div class="content_cansat">
-                <div class="page_title_cansat">
-                    CanSat 2019 | Texas Competition
+                    <a class="active" href="../CV_MTrombini.pdf">CV/Résumé</a>
                 </div>
 
-                <div class="page_content_cansat">
-                    <h1>Overview</h1>
-                    <p> The American Astronautical Society has been running an annual space-engineering competition open to university students for many years, and now sees competitors fly to Dallas from all over the world to participate.</p>
-
-                    <p>The competition has a full design-build-launch structure to it, which gives participating teams experience in bringing a complex engineering project to fruition and be involved with all stages of the end-to-end life cycle.</p>
-
-                    <p>Each year, slightly different design goals are prescribed. In general however, the main task is to develop a payload (the "satellite") that gets placed into a rocket, is deployed, and eventually recovered when it lands. The 2019 competition had the following mission objectives:</p>
-
-                    <ul>
-                        <li>The CanSat shall consist of two parts, the science payload and the container to protect the science payload as it is deployed from the rocket.</li>
-                        <li>The Cansat shall be launched to an altitude ranging 670 - 725m above the launch site and deployed near apogee (peak altitude).</li>
-                        <li>The CanSat container must protect the science payload from damage during the launch and deployment.</li>
-                        <li>The CanSat shall descend using a parachute at a descent rate of 20 m/s.</li>
-                        <li>At 450 meters, the container shall release a science autogyro payload de-accelerating to 10 to 15 m/s.</li>
-                        <li>As the science payload descends under autogyro control, the payload will transmit telemetry which shall include sensors to track altitude using air pressure, external temperature, battery voltage, GPS position, pitch and roll and autogyro blade spin rate sensors.</li>
-                        <li>When the science payload lands, all telemetry transmission shall stop and a locator audio beacon shall activate.</li>
-                    </ul>
-
-                    <figure>
-                        <img src="cansat_imgs/Operations1.png" alt="" class="width80">
-                        <figcaption>An overview of the system operation</figcaption>
-                    </figure>
-
-                    <p>Bonus Objective</p>
-                    <ul>
-                        <li>A video camera shall point downward 45 degrees from nadir. It shall be spin stabilized and point in one direction relative to the earth’s magnetic field with a stability of +/- 10 degrees.</li>
-                        <li>Video shall be in colour with a minimum resolution of 640x480 pixels and 30 frames per second. </li>
-                        <li>The direction the camera is pointed relative to earth’s magnetic north shall be included in the telemetry. </li>
-                    </ul>
-
-                    <p>2019's competition was particularly challenging as it involved learning about a new concept none of us were particularly familiar with prior to this competition: an autogyro. What is effectively an aircraft with freely rotating un-powered blades that rotate only by the effects of the slipstream. Quite different from a conventional helicopter, that relies on an engine. </p>
-
-                    <p>In addition to the mission objective, there were many additional constraints. Some of the more important and complicating ones are listed below:</p>
-
-                    <ul>
-                        <li>Total mass of  500 grams +/- 10 grams </li>
-                        <li>CanSat shall fit in a cylindrical envelope of 125 mm diameter x 310 mm length</li>
-                        <li>The descent rate of the CanSat (container and science payload) shall be 20 meters/second +/- 5m/s.</li>
-                        <li>The container shall release the payload at 450 meters +/- 10 meters.</li>
-                        <li>All descent control device attachment components shall survive 30 Gs of shock.</li>
-                    </ul>
-
-                    <h1>Conceptual Design</h1>
-                    <p>As the mechanical design team lead, my job began immediately as other design decision relied heavily on the eventual design my team would settle on. We started brainstorming several conceptual designs, and eventually narrowed them down to two system-level concepts:</p>
-
-                    <figure>
-                        <img src="cansat_imgs/Concept1.png" alt="" class="width80">
-                        <figcaption>Concept 1</figcaption>
-                    </figure>
-
-                    <ul>
-                        <li>Spring actuated clamshell container opening</li>
-                        <li>Servo actuated three ring mechanism to maintain stowed configuration</li>
-                        <li>Two large blades</li>
-                        <li>Exposed areas of payload and container covered by Mylar</li>
-                    </ul>
-                    
-                    <figure>
-                        <img src="cansat_imgs/Concept2.png" alt="" class="width80">
-                        <figcaption>Concept 2</figcaption>
-                    </figure>
-
-                    <ul>
-                        <li>Released by cutting nylon chord with nichrome wire</li>
-                        <li>Four blades</li>
-                        <li>Blades deployed by use of springs</li>
-                        <li>Payload and container covered by Mylar</li>
-                    </ul>
-                    
-                    <p>In the end, we decided to go with the second conceptual design as it was the most reliable in terms of release mechanism , the easiest to manufacture, and generally the simplest design.</p>
-
-                    <p>With a relatively concrete idea of what shape the final container and payload would take, we were able to start dimensioning it. This is a crucial stage, as whether the systems all integrate properly depend largely on whether or not they wee properly accounted for at this point in the design cycle.</p>
-
-                    <figure>
-                        <img src="cansat_imgs/Dimensions.png" alt="" class="width80">
-                        <figcaption></figcaption>
-                    </figure>
-
-                    <p>The next design challenge was settling on the payload design. This too went through many conceptual prototyping stages, but eventually two main approaches emerged.</p>
-
-                    <figure>
-                        <img src="cansat_imgs/Payload1.png" alt="" class="width80">
-                        <figcaption>Configuration 1: Two-blade system</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="cansat_imgs/Payload2.png" alt="" class="width80">
-                        <figcaption>Configuration 2: Four-blade system</figcaption>
-                    </figure>
-
-                    <p>As mentioned above, we settled on the second concept. This payload (that gets ejected from the container at 450 metres) had the following components on board (numbered on the diagram):</p>
-
-                    <ol>
-                        <li>Two springs</li>
-                        <li>Hinge</li>
-                        <li>Attachments points</li>
-                        <li>Optical sensor</li>
-                        <li>Batteries in battery compartments</li>
-                        <li>PCB</li>
-                        <li>Raspberry Pi Zero</li>
-                        <li>Camera</li>
-                        <li>Servo with Fins</li>
-                    </ol>
-
-                    <h1>Prototyping and Build</h1>
-                    <p>The final design ended up evolving quite a bit throughout the manufacturing process as we realized what we could and couldn't do in terms of material availability (and cost) and manufacturing feasibility.</p>
-
-                    <figure>
-                        <img src="cansat_imgs/Build1.jpg" alt="" class="width80">
-                        <figcaption>First laser cut sections of the container section</figcaption>
-                    </figure>
-
-                    <p>Thanks to the detailed CAD that was produced in the design phase, prototyping was relatively straightforward, although each individual component had to have minor adjustments made to them, and went through several iterations.</p>
-
-                    <div class="row">
-                        <div class="column">
-                          <img src="cansat_imgs/P1.jpg" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="cansat_imgs/P2.jpg" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="cansat_imgs/P3.jpg" alt="" style="width:100%">
-                        </div>
-                    </div>
-                    <figcaption>Prototype of payload</figcaption>
-
-                    <p>The container went through the biggest (still minor) design alteration, where the entire top of it that would house the electronics was redesigned so as to have an easier access hatch. </p>
-
-                    <div class="row">
-                        <div class="column">
-                          <img src="cansat_imgs/Container1.jpg" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="cansat_imgs/Container2.jpg" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="cansat_imgs/Container3.JPG" alt="" style="width:100%">
-                        </div>
-                    </div>
-                    <figcaption>Prototype of container</figcaption>
-
-                    <p>The rotor (that held the blades) was by far the most complex system on the CanSat, it was composed of 5 components, each 3D printed to a very high tolerance. It functioned by having torsion springs constantly pushing against the blades when in the stowed configuration, and when the payload would drop out of the container, the springs would force the blades to open.</p>
-
-                    <div class="row">
-                        <div class="column">
-                          <img src="cansat_imgs/Rotor1.JPG" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="cansat_imgs/Rotor2.JPG" alt="" style="width:100%">
-                        </div>
-                    </div>
-                    <figcaption>Final rotor mount</figcaption>
-
-                    <h1>Launch</h1>
-                    <p>Upon our arrival in Texas, we had 2 days to get our CanSat approved through various structural and drop tests. Once that was complete, and after making a few final adjustments, we headed to the field where we set up our Ground Station and loaded our CanSat into the rocket. </p>
-                    <p>Click <a href="https://youtu.be/x7Xe5Wvysqk" style="color: blue;">here</a> to see the launch!</p>
-
-                    <div class="row">
-                        <div class="column">
-                          <img src="cansat_imgs/Texas1.JPG" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                          <img src="cansat_imgs/Texas2.JPG" alt="" style="width:100%">
-                        </div>
-                    </div>
-                    <figcaption>Ground station and final setup</figcaption>
-                                        
-
-                </div>
+                <i class="material-icons" , id="menu_bars" , class="menu_bars" onclick="menu()">menu</i>
             </div>
 
-            <div class="footer">
-                <div class="footer_links">
-                    <a href="mailto: trombinimatteo@gmail.com"><i class="fas fa-at fa-lg"></i></a>
-                    <a href="https://www.linkedin.com/in/trombinimatteo" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fa-lg"></i></a>
-                    <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-lg"></i></a>
+            <div class="mobile_dropdown">
+                <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
+                <a class="active" href="../CV_MTrombini.pdf">CV/Résumé</a>
+                <a class="active" href="bio.html">Bio</a>
+                <a class="active" href="projects.html">Projects</a>
+                <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </nav>
+
+        <div class="content_cansat">
+            <div class="page_title_cansat">
+                CanSat 2019 | Texas Competition
+            </div>
+
+            <div class="page_content_cansat">
+                <h1>Overview</h1>
+                <p> The American Astronautical Society has been running an annual space-engineering competition open to
+                    university students for many years, and now sees competitors fly to Dallas from all over the world
+                    to participate.</p>
+
+                <p>The competition has a full design-build-launch structure to it, which gives participating teams
+                    experience in bringing a complex engineering project to fruition and be involved with all stages of
+                    the end-to-end life cycle.</p>
+
+                <p>Each year, slightly different design goals are prescribed. In general however, the main task is to
+                    develop a payload (the "satellite") that gets placed into a rocket, is deployed, and eventually
+                    recovered when it lands. The 2019 competition had the following mission objectives:</p>
+
+                <ul>
+                    <li>The CanSat shall consist of two parts, the science payload and the container to protect the
+                        science payload as it is deployed from the rocket.</li>
+                    <li>The Cansat shall be launched to an altitude ranging 670 - 725m above the launch site and
+                        deployed near apogee (peak altitude).</li>
+                    <li>The CanSat container must protect the science payload from damage during the launch and
+                        deployment.</li>
+                    <li>The CanSat shall descend using a parachute at a descent rate of 20 m/s.</li>
+                    <li>At 450 meters, the container shall release a science autogyro payload de-accelerating to 10 to
+                        15 m/s.</li>
+                    <li>As the science payload descends under autogyro control, the payload will transmit telemetry
+                        which shall include sensors to track altitude using air pressure, external temperature, battery
+                        voltage, GPS position, pitch and roll and autogyro blade spin rate sensors.</li>
+                    <li>When the science payload lands, all telemetry transmission shall stop and a locator audio beacon
+                        shall activate.</li>
+                </ul>
+
+                <figure>
+                    <img src="cansat_imgs/Operations1.png" alt="" class="width80">
+                    <figcaption>An overview of the system operation</figcaption>
+                </figure>
+
+                <p>Bonus Objective</p>
+                <ul>
+                    <li>A video camera shall point downward 45 degrees from nadir. It shall be spin stabilized and point
+                        in one direction relative to the earth’s magnetic field with a stability of +/- 10 degrees.</li>
+                    <li>Video shall be in colour with a minimum resolution of 640x480 pixels and 30 frames per second.
+                    </li>
+                    <li>The direction the camera is pointed relative to earth’s magnetic north shall be included in the
+                        telemetry. </li>
+                </ul>
+
+                <p>2019's competition was particularly challenging as it involved learning about a new concept none of
+                    us were particularly familiar with prior to this competition: an autogyro. What is effectively an
+                    aircraft with freely rotating un-powered blades that rotate only by the effects of the slipstream.
+                    Quite different from a conventional helicopter, that relies on an engine. </p>
+
+                <p>In addition to the mission objective, there were many additional constraints. Some of the more
+                    important and complicating ones are listed below:</p>
+
+                <ul>
+                    <li>Total mass of 500 grams +/- 10 grams </li>
+                    <li>CanSat shall fit in a cylindrical envelope of 125 mm diameter x 310 mm length</li>
+                    <li>The descent rate of the CanSat (container and science payload) shall be 20 meters/second +/-
+                        5m/s.</li>
+                    <li>The container shall release the payload at 450 meters +/- 10 meters.</li>
+                    <li>All descent control device attachment components shall survive 30 Gs of shock.</li>
+                </ul>
+
+                <h1>Conceptual Design</h1>
+                <p>As the mechanical design team lead, my job began immediately as other design decision relied heavily
+                    on the eventual design my team would settle on. We started brainstorming several conceptual designs,
+                    and eventually narrowed them down to two system-level concepts:</p>
+
+                <figure>
+                    <img src="cansat_imgs/Concept1.png" alt="" class="width80">
+                    <figcaption>Concept 1</figcaption>
+                </figure>
+
+                <ul>
+                    <li>Spring actuated clamshell container opening</li>
+                    <li>Servo actuated three ring mechanism to maintain stowed configuration</li>
+                    <li>Two large blades</li>
+                    <li>Exposed areas of payload and container covered by Mylar</li>
+                </ul>
+
+                <figure>
+                    <img src="cansat_imgs/Concept2.png" alt="" class="width80">
+                    <figcaption>Concept 2</figcaption>
+                </figure>
+
+                <ul>
+                    <li>Released by cutting nylon chord with nichrome wire</li>
+                    <li>Four blades</li>
+                    <li>Blades deployed by use of springs</li>
+                    <li>Payload and container covered by Mylar</li>
+                </ul>
+
+                <p>In the end, we decided to go with the second conceptual design as it was the most reliable in terms
+                    of release mechanism , the easiest to manufacture, and generally the simplest design.</p>
+
+                <p>With a relatively concrete idea of what shape the final container and payload would take, we were
+                    able to start dimensioning it. This is a crucial stage, as whether the systems all integrate
+                    properly depend largely on whether or not they wee properly accounted for at this point in the
+                    design cycle.</p>
+
+                <figure>
+                    <img src="cansat_imgs/Dimensions.png" alt="" class="width80">
+                    <figcaption></figcaption>
+                </figure>
+
+                <p>The next design challenge was settling on the payload design. This too went through many conceptual
+                    prototyping stages, but eventually two main approaches emerged.</p>
+
+                <figure>
+                    <img src="cansat_imgs/Payload1.png" alt="" class="width80">
+                    <figcaption>Configuration 1: Two-blade system</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="cansat_imgs/Payload2.png" alt="" class="width80">
+                    <figcaption>Configuration 2: Four-blade system</figcaption>
+                </figure>
+
+                <p>As mentioned above, we settled on the second concept. This payload (that gets ejected from the
+                    container at 450 metres) had the following components on board (numbered on the diagram):</p>
+
+                <ol>
+                    <li>Two springs</li>
+                    <li>Hinge</li>
+                    <li>Attachments points</li>
+                    <li>Optical sensor</li>
+                    <li>Batteries in battery compartments</li>
+                    <li>PCB</li>
+                    <li>Raspberry Pi Zero</li>
+                    <li>Camera</li>
+                    <li>Servo with Fins</li>
+                </ol>
+
+                <h1>Prototyping and Build</h1>
+                <p>The final design ended up evolving quite a bit throughout the manufacturing process as we realized
+                    what we could and couldn't do in terms of material availability (and cost) and manufacturing
+                    feasibility.</p>
+
+                <figure>
+                    <img src="cansat_imgs/Build1.jpg" alt="" class="width80">
+                    <figcaption>First laser cut sections of the container section</figcaption>
+                </figure>
+
+                <p>Thanks to the detailed CAD that was produced in the design phase, prototyping was relatively
+                    straightforward, although each individual component had to have minor adjustments made to them, and
+                    went through several iterations.</p>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="cansat_imgs/P1.jpg" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="cansat_imgs/P2.jpg" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="cansat_imgs/P3.jpg" alt="" style="width:100%">
+                    </div>
                 </div>
+                <figcaption>Prototype of payload</figcaption>
+
+                <p>The container went through the biggest (still minor) design alteration, where the entire top of it
+                    that would house the electronics was redesigned so as to have an easier access hatch. </p>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="cansat_imgs/Container1.jpg" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="cansat_imgs/Container2.jpg" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="cansat_imgs/Container3.JPG" alt="" style="width:100%">
+                    </div>
+                </div>
+                <figcaption>Prototype of container</figcaption>
+
+                <p>The rotor (that held the blades) was by far the most complex system on the CanSat, it was composed of
+                    5 components, each 3D printed to a very high tolerance. It functioned by having torsion springs
+                    constantly pushing against the blades when in the stowed configuration, and when the payload would
+                    drop out of the container, the springs would force the blades to open.</p>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="cansat_imgs/Rotor1.JPG" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="cansat_imgs/Rotor2.JPG" alt="" style="width:100%">
+                    </div>
+                </div>
+                <figcaption>Final rotor mount</figcaption>
+
+                <h1>Launch</h1>
+                <p>Upon our arrival in Texas, we had 2 days to get our CanSat approved through various structural and
+                    drop tests. Once that was complete, and after making a few final adjustments, we headed to the field
+                    where we set up our Ground Station and loaded our CanSat into the rocket. </p>
+                <p>Click <a href="https://youtu.be/x7Xe5Wvysqk" style="color: blue;">here</a> to see the launch!</p>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="cansat_imgs/Texas1.JPG" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="cansat_imgs/Texas2.JPG" alt="" style="width:100%">
+                    </div>
+                </div>
+                <figcaption>Ground station and final setup</figcaption>
+
+
             </div>
         </div>
-    </body>
 
-    <script src="../scripts/dropdown_menu.js"></script>
+        <div class="footer">
+            <div class="footer_links">
+                <a href="mailto: trombinimatteo@gmail.com"><i class="fas fa-at fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/trombinimatteo" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-github-alt fa-lg"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../scripts/dropdown_menu.js"></script>
 
 </html>
