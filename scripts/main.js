@@ -63,20 +63,20 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-var Asteroids = {};
+var Kuiper = {};
 
 const thetaStart = Array.from({ length: 400 }, () => Math.floor(Math.random() * 400));
 
 thetaStart.forEach(myFunction);
 function myFunction(value, index, array) {
-    Asteroids[index] = new Planet(getRndInteger(950, 1050), value, -0.0003, 2, 'gray');
+    Kuiper[index] = new Planet(getRndInteger(950, 1050), value, -0.0003, 2, 'gray');
 }
 
 function drawKuiper() {
-    Object.keys(Asteroids).forEach(key => {
+    Object.keys(Kuiper).forEach(key => {
         // console.log(key);        // the name of the current key.
-        // console.log(Asteroids[key]); // the value of the current key.
-        drawPlanet(Asteroids[key].calcPos()[0], Asteroids[key].calcPos()[1], Asteroids[key].radius, Asteroids[key].color);
+        // console.log(Kuiper[key]); // the value of the current key.
+        drawPlanet(Kuiper[key].calcPos()[0], Kuiper[key].calcPos()[1], Kuiper[key].radius, Kuiper[key].color);
     });
 }
 
@@ -112,8 +112,8 @@ function draw() {
 
     drawKuiper()
 
-    Object.keys(Asteroids).forEach(key => {
-        Asteroids[key].theta += Asteroids[key].dtheta;
+    Object.keys(Kuiper).forEach(key => {
+        Kuiper[key].theta += Kuiper[key].dtheta;
     });
 }
 
