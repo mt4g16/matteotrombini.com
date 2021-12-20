@@ -9,7 +9,8 @@
     --yellow-color: #c4a64b;
     --blue-color: #4174a7;
     --lightblue-color: #778ceb;
-    --lightred-color: #eb7777;
+    --marsred-color: #1e0daf;
+    --lightred-color: #4174a7;
 
 }
 
@@ -190,7 +191,7 @@ nav .mobile_dropdown {
     }
     
     .nav_dropdown:hover .nav_dropbtn {
-        background-color: var(--lightblue-color);
+        background-color: var(--lightred-color);
         color: var(--white-color);
     }
 

@@ -44,8 +44,8 @@ img {
 }
 
 .infobox_title {
-    background-color: var(--lightblue-color);
-    border: solid 3px var(--blue-color);
+    background-color: var(--lightred-color);
+    border: solid 3px var(--marsred-color);
     padding: 10px;
     margin: 3px;
     margin-bottom: 0px;
