@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8">
+        <title>Bio</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/bio.css">
+        <script src="https://kit.fontawesome.com/ee9f430454.js" crossorigin="anonymous"></script>   
+        <script src="../scripts/dropdown_menu.js"></script> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="icon" href="../images/rocket.ico">
+    </head>
+    <body id="page_type1">
+        <div class="grid_wrapper">
+            <nav>
+                <div class="nav_wrapper">
+                    <div id="logo">
+                        <a href='../index.html'>Matteo Trombini</a>
+                    </div>
+
+                    <div class="nav_buttons", id="menu">
+                        <div class="nav_dropdown">
+                            <button class="nav_dropbtn">Navigation</button>
+                            <div class="nav_dropdown_content">
+                            <a href="bio.html">Bio</a>
+                            <a href="projects.html">Projects</a>
+                            <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+
+                        <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
+                        <a class="active" href="CV_MTrombini.pdf">CV/Résumé</a>
+                    </div>
+
+                    <i class="material-icons", id="menu_bars", class="menu_bars" onclick="menu()">menu</i>
+                </div>
+
+                <div class="mobile_dropdown">
+                    <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
+                    <a class="active" href="#CV">CV/Résumé</a>
+                    <a class="active" href="bio.html">Bio</a>
+                    <a class="active" href="projects.html">Projects</a>
+                    <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>     
+            </nav>
+
+            <div class="content_bio">
+
+                    <div class="bio_title">
+                        Bio
+                    </div> 
+
+                    <div class="infobox_wrapper">
+                        <div class="infobox">
+                            <div class="infobox_title box1t" onclick="showInfo('box1c')">Skills</div>
+                            <div class="infobox_content box1c content">
+                                <b>Confident in:</b>
+                                <ul>
+                                    <li>Python 2.7 & 3</li>
+                                    <li>SolidWorks</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Fusion360</li>
+                                    <li>LaTeX</li>
+                                    <li>ArduPilot</li>
+                                    <li>Laser Cutting & 3D Printing</li>
+                                  </ul>
+                            </div>
+                        </div>
+    
+                        <div class="infobox">
+                            <div class="infobox_title box2t" onclick="showInfo('box2c')">Languages</div>
+                            <div class="infobox_content box2c content">
+                                <ul>
+                                    <li>English (native)</li>
+                                    <li>Italian (native)</li>
+                                    <li>German (B1)</li>
+                                    <li>Spanish (B1)</li>
+                                    <li>French (IB Grade 7 of 7)</li>
+                                  </ul>
+                            </div>
+                        </div>
+    
+                        <div class="infobox">
+                            <div class="infobox_title box3t" onclick="showInfo('box3c')">Volunteering</div>
+                            <div class="infobox_content box3c content">
+                                <ul>
+                                    <li>A-Level Maths Class Assistant</li>
+                                    <li>Personal Maths Tutor (Southampton)</li>
+                                    <li>Cardiology and Gastroenterology Intern (Zurich)</li>
+                                  </ul>
+                            </div>
+                        </div>
+
+                        <div class="infobox">
+                            <div class="infobox_title box4t" onclick="showInfo('box4c')">Extracurricular</div>
+                            <div class="infobox_content box4c content">
+                                <ul>
+                                    <li>Elected Course Representative</li>
+                                    <li>Human Powered Aircraft Treasurer</li>
+                                  </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                <div class="item2">
+                    <div>
+                        <h1>
+                            Hi there,
+                        </h1>
+                        <p>
+                            My name is Matteo Trombini, and I’m a recent aerospace engineering graduate from the University of Southampton. Prior to this, I completed my IB diploma in Zurich, Switzerland, where I was born.  Being the son of Italian parents and having attended an international school has given me a unique perspective as a global citizen, and gave me the privilege to work with people from diverse backgrounds. 
+                        </p>
+                        <p>
+                            Throughout high school I was deeply interested in a variety of subjects ranging from math and physics, the natural sciences, and languages. I decided to study engineering as it would combine my interests in technology and math with my passion for aircraft and flying. I immediately loved my course the minute I started it, and my interest only grew as I continued my studies. Throughout my bachelor I also discovered a new passion: computer science and programming. I quickly began to incorporate python into all my coursework and eventually pursued a computational dissertation where I developed an automated flight protocol. 
+                        </p>
+                        <p>
+                            My interest in programming rapidly developed into other branches of computer science, particularly web development. I built this website from scratch using HTML, CSS and JS to create a platform to showcase past and future projects I have and will work on. Feel free to contact me at any time using the link in the navbar, or download my CV using the button right next to it. Thanks for stopping by!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <div class="footer_links">
+                    <a href="mailto: trombinimatteo@gmail.com"><i class="fas fa-at fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/trombinimatteo" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-lg"></i></a>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+
+    <script src="../scripts/dropdown_menu.js"></script>
+
+
+</html>

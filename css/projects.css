@@ -1,0 +1,117 @@
+.projects_snippets {grid-area: snippets;}
+
+.projects_titles {grid-area: titles;}
+
+.projects_PageTitle {grid-area: PageTitle;}
+
+#p1s {display: none;}
+#p2s {display: none;}
+#p3s {display: none;}
+
+
+.projects_PageTitle {
+    font-size: 4vh;
+    margin: 2vw 3.5vw;
+    padding: 15px 40px 10px 0;
+    background-image: linear-gradient(transparent 60%, #FFD966 55%);
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    max-width: min-content;
+}
+
+.projects_wrapper {
+
+    display: grid;
+    grid-template-areas: 
+    'PageTitle PageTitle'
+    'snippets titles';
+
+    grid-template-rows: min-content auto;
+    grid-template-columns: 1fr 1fr;
+}
+
+#ps_prompt {
+    padding: 10vw;
+}
+
+img {
+    max-width:100%;
+    max-height: 50vh;
+    box-shadow: 5px 10px lightgray;
+    border-radius: 5px;
+}
+
+.projects_snippets {
+    display: grid;
+    align-items: start;
+    justify-items: center;
+    margin: 0 4vw;
+}
+
+
+.snippet_blurb {
+    padding: 15px 10px;
+    background-color: white;
+    box-shadow: 5px 10px lightgray;
+    border-radius: 5px;
+}
+
+.p_title {
+    border: 5px solid #9DC3E6;
+    width: 70%;
+    margin: 10px;
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.projects_titles > h2 {
+    margin-left: 10px;
+}
+
+.p_title:hover {
+    border: 5px solid #77a7eb;
+    background-color: #9DC3E6;
+    color: white;
+}
+
+.projects_titles {
+    margin: 0 10vh;
+}
+
+@media only screen and (max-width: 915px){
+    #menu_bars {display: initial; padding: 5vh; margin-left: 25vw;}
+    #menu {display: none;}
+
+    .projects_PageTitle {
+        white-space: normal;
+        overflow: visible;
+
+        min-width: 50vw;
+    }
+
+    .projects_wrapper {
+        display: grid;
+        grid-template-areas: 
+        'PageTitle'
+        'titles';
+
+        grid-template-columns: 1fr;
+    }
+
+    .p_title {
+        width: auto;
+    }
+
+    .projects_titles {
+        margin: 0 1vh;
+    }
+
+    .projects_snippets {
+        display: none;
+    }
+
+}

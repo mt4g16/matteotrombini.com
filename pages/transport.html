@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8">
+        <title>Transportation Optimization</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/transport.css">
+        <script src="https://kit.fontawesome.com/ee9f430454.js" crossorigin="anonymous"></script>    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    </head>
+    <body id="page_type1">
+        <div class="grid_wrapper">
+            <nav>
+                <div class="nav_wrapper">
+                    <div id="logo">
+                        <a href='../index.html'>Matteo Trombini</a>
+                    </div>
+
+                    <div class="nav_buttons", id="menu">
+                        <div class="nav_dropdown">
+                            <button class="nav_dropbtn">Navigation</button>
+                            <div class="nav_dropdown_content">
+                            <a href="bio.html">Bio</a>
+                            <a href="projects.html">Projects</a>
+                            <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+
+                        <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
+                        <a class="active" href="CV_MTrombini.pdf">CV/Résumé</a>
+                    </div>
+
+                    <i class="material-icons", id="menu_bars", class="menu_bars" onclick="menu()">menu</i>
+                </div>
+
+                <div class="mobile_dropdown">
+                    <a class="active" href="mailto: trombinimatteo@gmail.com">Contact</a>
+                    <a class="active" href="#CV">CV/Résumé</a>
+                    <a class="active" href="bio.html">Bio</a>
+                    <a class="active" href="projects.html">Projects</a>
+                    <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>     
+            </nav>
+
+            <div class="content_transport">
+                <div class="page_title_transport">
+                    Transportation Optimization Problem | Simplex Method
+                </div>
+
+                <div class="page_content_transport">
+                    <h1>Introduction</h1>
+                    <p>The Southampton City Council has decided to close one of its secondary schools, leaving it with only three, to serve 6 discreet areas with a total relevant student population of 2900. These changes will come into effect the coming academic year, meaning preparations to transition to this new system are being conducted. Many problems arise with such a large change, especially logistically. One such problem is how the schools will reassign their busing routes. Southampton has 6 residential catchment areas, each of which has a certain population of secondary school students that, by policy, must be transported to and from school – if the total distance traveled is more than 1 mile. Naturally, this is an expensive enterprise, and the Council wishes to reduce costs if possible. </p>
+
+                    <p>This information is summarized below in Table 1, provided by the Council. It contains an overview of the total number of students in each area, what percentage of the area is composed of 6th, 7th, and 8th graders, and how much it costs to transport students from each area to each of the schools. A cost of £0 means that busing is unnecessary due to the travel distance being less than 1 mile, and a hyphen indicates an infeasible task. </p>
+
+                    <figure>
+                        <img src="transport_imgs/Table1.png" alt="" class="width100">
+                    </figure>
+                    
+                    <p>The school has requested a study determining the best bussing
+                    routes to be conducted. They have specified the following: </p>
+
+                    <p><em>Condition 1 - the total cost of the busing routes must be minimized </em></p>
+
+                    <p><em>Condition 2 - each grade must compose between 30 and 36 percent of any school’s population</em></p>
+
+                    <p>The following report will analyse several different scenarios requested by the Council, outlined below in Table 2.</p>
+
+                    <figure>
+                        <img src="transport_imgs/Table2.png" alt="" class="width100">
+                    </figure>
+
+                    <h1>Model Formulation</h1>
+
+                    <p>This problem is well suited to be solved with a linear programming simplex method and will be completed as such using the Excel Solver module. Below are several parameters that must be defined prior to computing the solution. This is graphically displayed below in Figure 1 – Transportation and Cost Diagram as a transportation method problem. Where each area has a line showing a bus route and the associated cost.</p>
+
+                    <figure>
+                        <img src="transport_imgs/Figure1.png" alt="" class="width80">
+                    </figure>
+
+                    <h1>Decision Variables</h1>
+                    <p>Table 3 outlines how each group of students being transported to each school is denoted. For example, ‘x1A’ refers to the number of students who live in Area 1 and are being transported to School A. </p>
+
+                    <h1>Objective Function</h1>
+                    <p>The objective function calculates the total cost of the operation by calculating the sum-product of the decision variables and their assigned costs. Using the information presented in Figure 1 – Transportation and Cost Diagram, the minimization objective function is (shortened):</p>
+
+                    <figure>
+                        <img src="transport_imgs/Eqn1.png" alt="" class="width100">
+                    </figure>
+
+
+                    <h1>Constraints</h1>
+                    <p>Table 1 states that schools A, B and C have capacities of 900, 1100, and 1000 – naturally these cannot be exceeded. This constraint is presented formulaically in equations 2 through 4 in terms of the decision variables outlined in Table 3. Note how the operator used signifies that the capacity cannot be exceeded but can be under-filled. </p>
+
+                    <figure>
+                        <img src="transport_imgs/Eqn2-4.png" alt="" class="width100">
+                    </figure>
+
+                    <p>Moreover, each area has a certain number of students. These are shown in equations 5 through 10. The operator used signifies that every student within the area must be transported.</p>
+
+                    <figure>
+                        <img src="transport_imgs/Eqn5-10.png" alt="" class="width100">
+                    </figure>
+
+                    <p>‘Condition 2’ (stated in introduction section) set by the school is the most difficult to satisfy.  To do this, an intermediary variable was created for each grade for each school. This variable is then equal to the total number of nth graders (where n=6,7,8) in all areas, in terms of the decision variables from Table 3.</p>
+
+                    <p>Equations 11 through 13 identify intermediary variables SAG6, SBG6, and SCG6. SAG6, for example, is the total number of 6th grade students in School A, SBG6 the total number of 6th grade students in School B, etc. These were calculated using the percentages of grade 6 students in each area from Table 1.</p>
+
+                    <figure>
+                        <img src="transport_imgs/Eqn11-19.png" alt="" class="width100">
+                    </figure>
+
+                    <p>To successfully integrate ‘Condition 2’ into the simplex solver, it must be ensured that each intermediary variable (e.g. SAG6) be more than 30% but less than 30% of the school’s population.</p>
+
+                    <p>Each school’s population will be referred to as SA_P, SB_P, and SC_P such that:</p>
+
+                    <figure>
+                        <img src="transport_imgs/Eqn20-22.png" alt="" class="width100">
+                    </figure>
+
+                    <p>Thus, limiting the intermediary variables to ‘Condition 2’ is a matter of multiplying each school population by 30% and 36%, and creating an equality condition:</p>
+
+                    <figure>
+                        <img src="transport_imgs/Eqn23-31.png" alt="" class="width100">
+                    </figure>
+
+                    <h1>Excel Solver Methodology</h1>
+                    <p>Importantly, and for all scenarios, an assumption that students are not treated as integer values was made. Meaning the solver will, for example, instruct the school to transport 50.5 students on a bus route, which is of course not possible. Thus, it is recommended the nearest whole number is taken as the value.</p>
+
+                    <h2>Scenario A</h2>
+
+                    <figure>
+                        <img src="transport_imgs/Eqn32-34.png" alt="" class="width100">
+                    </figure>
+
+                    <h2>Scenario B - Option 1</h2>
+                    <p>To calculate this scenario (removing busing for students travelling under 1.5 miles), it was simply a matter of removing all costs equal to £200 and replacing them with £0. This effectively eliminates them as a factor in the simplex solution. </p>
+                    <figure>
+                        <img src="transport_imgs/Eqn35-36.png" alt="" class="width100">
+                    </figure>
+
+                    <h2>Scenario B - Option 2</h2>
+                    <p>Similarly, to remove busing for students travelling less than 2 miles, the following changes were made to remove costs of £300 and under. Appendix B illustrates in more detail how these values were inputted, for both Options 1 and 2. </p>
+                    <figure>
+                        <img src="transport_imgs/Eqn37-41.png" alt="" class="width100">
+                    </figure>
+
+                    <h1>Analysis and Discussion of Results</h1>
+                    <figure>
+                        <img src="transport_imgs/Table4.png" alt="" class="width80">
+                    </figure>
+                    <p>The optimal prices for each scenario are outlined above in Table 4. </p>
+                    <h2> Scenario A and B Comparison</h2>
+                    <p>As shown in Table 4, the best price that can be achieved for Scenario A is £555,555.56. The objective functions for Scenarios A and B can be found in Appendix D, where the numbers of students for each route are outlined.</p>
+                    <p>From Table 4 it is clear that both Options 1 and 2 from Scenario B offer significant savings; - £161,919.20, - £215,501.80 respectively, from Scenario A. The Council is naturally also concerned about the inconvenience this may cause students, especially those being forced to travel 2 miles, either by foot or bike. Thus, it is our recommendation that if cost saving measures are necessary, Option 1 be taken as it still provides significant cost reductions, 29.15% less than Scenario A, but still takes into account the well-being of the students. The proportion of students in each school, and the respective grade distributions can be found in Appendix E. All conditions, including ‘Condition 2’ were satisfied for each scenario. </p>
+
+                    <h2>Scenario C</h2>
+                    <p>The council has advised that bussing costs from Area 6 to each of the schools are only estimations and are subject to potential increases. These possibilities have been analysed, with a focus on transportation from Area 6 to School A whose price increase to £550 has been considered. This was done with respect to the plan from Scenario A (question a). </p>
+                    <p>The relevant information from Scenario A’s sensitivity report is outlined below in Table 5.</p>
+
+                    <figure>
+                        <img src="transport_imgs/Table5.png" alt="" class="width100">
+                    </figure>
+
+                    <p>Using information from Table 5, the ranges of optimality for the cost of students travelling from Area 6 were calculated and shown in Table 6. </p>
+
+                    <figure>
+                        <img src="transport_imgs/Table6.png" alt="" class="width50">
+                    </figure>
+
+                    <p>These ranges maintain optimality of the solution found in Scenario A. This means that if the price of transport from Area 6 to School A were to change, but is still within the range of (332.33, 533.33), the solution found in Scenario A remains optimal.</p>
+
+                    <p>An increase to £550 however is outside of this range. If this were to happen, the total transportation cost would rise resulting in a new solution. This would cost a total of £559,318.18 (from Table 4: Scenario C), representing only a 0.68% increase in cost when compared to Scenario A. If all prices for transportation from Area 6 increase by 10%, the optimal price remains £559,318.18, as a 10% rise remains comfortably within the new ranges of optimality. This can be seen in further detail in Appendix C.</p>
+
+                    <h2>Scenario D</h2>
+                    <p>The Council has requested consideration be given to the possibility of adding ‘portable classrooms’ to increase a school’s capacity by 20 students (with a cost of £2,500 per year per classroom).</p>
+                    <p>The best method to determine whether this is a potential cost saving measure is by analyzing the range of feasibility for the binding constraints of the solution found in Scenario A.  Non-binding constraints will have a shadow price of zero, meaning any change in price will not affect the new cost of the solution, and will therefore be ignored. This is shown in Table 7 for School A: Shadow Price; which will be ignored as the value is zero.</p>
+
+                    <figure>
+                        <img src="transport_imgs/Table7.png" alt="" class="width100">
+                    </figure>
+
+                    <p>The range of feasibility is calculated as shown in equation 42:</p>
+
+                    <figure>
+                        <img src="transport_imgs/Eqn42.png" alt="" class="width100">
+                    </figure>
+
+                    <p>Where RHS, in this case, is referring to the school capacity (Table 7: Constraint R.H. Side). </p>
+
+                    <p>Normally, the range of feasibility analysis is done with regards to profit, in this case it will simply be replaced with overall cost.</p>
+
+                    <figure>
+                        <img src="transport_imgs/Eqn43.png" alt="" class="width100">
+                    </figure>
+
+                    <p>Where α is the increase of the constraint, for this Scenario, α=20 for one classroom.</p>
+
+                    <p>The ranges of feasibility for Schools 2 and 3 (School A is omitted due to Shadow Price being zero) are as follows:</p>
+
+                    <figure>
+                        <img src="transport_imgs/Table8.png" alt="" class="width50">
+                    </figure>
+
+                    <p>Thus, as only an integer number of classrooms can be leased, the following situations will be analysed:</p>
+
+                    <ul>
+                        <li>D1.  Adding one classroom to School B (cost increase of £2,500 per year)</li>
+                            <ul>
+                                <li>This brings the school capacity up to 1120, which is still within the range of feasibility.</li>
+                            </ul>
+                        <li> D2.  Adding one classroom to School C (cost increase of £2,500 per year)</li>
+                            <ul>
+                                <li>This brings the school capacity up to 1020; maintaining feasibility.</li>
+                            </ul>
+                        <li> D3.  Adding two classrooms to School C (cost increase of £5,000 per year)</li>
+                            <ul>
+                                <li>Capacity increased to 1040; still maintains feasibility.  α=40 in this case.</li>
+                            </ul>
+                      </ul>
+
+                      <p>The new overall costs are presented below. The Old Overall Cost used was £555,555.56 from Table 4.</p>
+
+                      <figure>
+                        <img src="transport_imgs/Table9.png" alt="" class="width100">
+                    </figure>
+
+                    <p>Therefore, as shown in Table 9, the greatest savings to be made are by adding one classroom to School B. With overall costs decreasing by £1055.60. If the school wished to add 3 portable classrooms for total savings of £1,833.20, the recommendation would be adding one to School B and two to School C.</p>
+
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer_links">
+                    <a href="mailto: trombinimatteo@gmail.com"><i class="fas fa-at fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/trombinimatteo" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <a href="https://github.com/mt4g16" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-lg"></i></a>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+
+    <script src="../scripts/dropdown_menu.js"></script>
+
+</html>

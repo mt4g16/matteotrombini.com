@@ -1,0 +1,114 @@
+
+.content_bio {
+    background: white;
+    display: grid;
+    grid-template-columns: 25vw auto;
+    grid-template-rows: 15vh auto;
+    grid-template-areas: "title bio_content" "infobox content";
+}
+
+.item1 {
+    align-content: top;
+ 
+    height: min-content;
+    margin-left: 40px;
+    padding-top: 45px;
+    user-select: none;
+}
+
+
+.item2 {
+    grid-area: bio_content;
+    margin-top: 2.5vw;
+}
+
+.item2 > div {
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 0 8vw;
+    padding-left: 4vw;
+}
+
+
+p {
+    font-size: 20px;
+}
+
+img {
+    max-width: 10vw;
+}
+
+.infobox {
+    margin-bottom: 15px;
+}
+
+.infobox_title {
+    background-color: lightblue;
+    border: solid 3px blue;
+    padding: 10px;
+    margin: 3px;
+    margin-bottom: 0px;
+}
+
+    .infobox_title:hover {
+        cursor: pointer;
+    }
+
+.infobox_content {
+    background-color: white;
+    border: solid 3px lightgray;
+    border-top: none;
+    padding: 10px;
+    margin: 3px;
+    margin-top: 0;
+
+}
+
+.box1c {
+    display: none;
+}
+
+.box2c {
+    display: none;
+}
+
+.box3c {
+    display: none;
+}
+
+.box4c {
+    display: none;
+}
+
+.bio_title {    
+    grid-area: title;
+    max-width: min-content;
+    margin-left: 2.5vw;
+    margin-top: 2.5vw;
+    font-size: 8vh;
+    display: inline;
+    background-image: linear-gradient(#fff 60%, #A9D18E 55%);    
+}
+
+.infobox_wrapper {
+    margin-top: 30px;
+    margin-left: 2.5vw;
+    grid-area: infobox;
+}
+
+
+@media only screen and (max-width: 915px){
+    #menu_bars {display: initial; padding: 5vh; margin-left: 25vw;}
+    #menu {display: none;}
+
+    .content_bio {
+        grid-template-columns: 1fr;
+        grid-template-areas: "title" "bio_content" "infobox";
+    }    
+
+    .infobox_wrapper {
+        margin: 0 2.5vw;
+    }
+}
+

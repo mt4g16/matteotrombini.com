@@ -1,0 +1,239 @@
+/* Page Setup and Universal Settings */
+html, body { margin: 0; padding: 0; }
+
+canvas { 
+    background: rgb(41, 40, 40); 
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:-1;
+}
+
+body {font-family: "Lucida Console";}
+
+        #page_type0 {background: #E7E6E6;}
+        #page_type2 {background: #E7E6E6;}
+
+a { text-decoration: none; color:black; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }
+
+.grid_wrapper{
+    display: grid;
+    height: 99vh;
+    grid-template-rows: min-content auto min-content;
+}
+
+
+/* Navbar Settings */
+#logo {
+    font-size: calc(20px + 1.3vw);
+    padding-top: 4vh;
+    padding-left: 3.5vw;
+    
+    user-select: none;
+}
+
+#menu {
+    border-bottom: 1px solid black;
+    height: 40px;
+    
+}
+
+    #menu a {
+        padding-right: 30px; 
+    }
+
+
+
+.nav_wrapper{
+    display: grid;
+    grid-auto-flow: column;
+    background: #E7E6E6;
+}
+
+.nav_wrapper2{
+    display: grid;
+    grid-auto-flow: column;
+    background: transparent;
+}
+
+#menu_bars {
+    display: none;
+}
+
+    #menu_bars:hover {
+        filter: opacity(50%);
+        cursor: pointer;
+        user-select: none;
+        padding: 5vh;
+    }
+
+.nav_wrapper > div{
+    padding: 5px;
+}
+
+.nav_buttons {
+    list-style-type: none;
+    text-align: right;
+    margin-right: 80px;
+    margin-top: 3vh;
+    margin-left: 5vh;
+    height: 100%;
+}
+
+        #page_type1 .nav_buttons {
+            margin-top: 1vh;
+            margin-bottom: 2vh;
+        }
+
+        #page_type1 .nav_buttons a {
+            padding-left: 50px;
+        }
+
+        #page_type2 .nav_buttons {
+            margin-top: 1vh;
+            margin-bottom: 2vh;
+        }
+
+        #page_type2 .nav_buttons a {
+            padding-left: 50px;
+        }
+
+/* Mobile-only hamburger menu */
+nav .mobile_dropdown {
+    display: none;
+    background-color: darkgray;
+    text-align: center;
+}
+
+    nav .mobile_dropdown a{
+        color: white;
+        padding: 30px;
+    }
+
+    nav .mobile_dropdown a:hover{
+        color: white;
+        background-color: #9DC3E6;
+    }
+
+
+
+/* page_type1 (content page) Navbar Dropdown Menu */
+.nav_dropbtn {
+    background-color: #9DC3E6;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: "Lucida Console";
+  }
+  
+    .nav_dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .nav_dropdown_content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    .nav_dropdown_content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .nav_dropdown_content a:hover {background-color: #f1f1f1}
+    
+    .nav_dropdown:hover .nav_dropdown_content {
+        display: block;
+    }
+    
+    .nav_dropdown:hover .nav_dropbtn {
+        background-color: #77a7eb;
+        color: white;
+    }
+
+
+
+/* Footer settings */
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2vh;
+}
+
+    #page_type1 .footer {
+        background: white;
+    }
+
+.footer div {
+    padding-left: min(3.5vw, 30px);
+}
+
+
+
+.footer {
+    align-items: end;
+}
+
+.footer_links i{
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
+
+/* Main page settings */
+.content_main {
+    font-size: max(45px, 4.5vw);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-content: center;
+    padding-top: 5vh;
+    padding-left: 5vw;
+}
+
+
+.bar {
+    text-align: right;
+    padding-right: 10vw;
+    padding-bottom: 5vh;
+}
+
+
+.btn {
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: calc(10px + 0.8vw);
+    cursor: pointer;
+    font-family: "Lucida Console";
+  }
+
+.bio {
+    background-color: #6a9749;
+}
+
+.proj {
+    background-color: #c4a64b;
+}
+
+.code {
+    background-color: #4174a7;
+}
+
+/* Screen size adjustment */
+@media only screen and (max-width: 750px){
+    #menu_bars {display: initial; padding: 5vh; margin-left:25vw;}
+    #menu {display: none;}
+}
