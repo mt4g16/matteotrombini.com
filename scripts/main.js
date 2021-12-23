@@ -47,6 +47,8 @@ var jupiter = new Planet(380, 20, -0.0002, 18, '#c48114')
 var saturn = new Planet(400, 44, -0.0002, 14, '#6b5e23')
 var uranus = new Planet(500, 12, -0.0002, 12, '#709187')
 var neptune = new Planet(550, 10, -0.0002, 13, '#145eb8')
+var pluto = new Planet(1000, 10, -0.0003, 2, 'purple')
+
 
 // var asteroid = new Planet(1000, 10, -0.01, 2, 'gray')
 
@@ -64,12 +66,19 @@ function getRndInteger(min, max) {
 }
 
 var Kuiper = {};
+var Asteroid = {};
 
 const thetaStart = Array.from({ length: 400 }, () => Math.floor(Math.random() * 400));
+const thetaStart2 = Array.from({ length: 50 }, () => Math.floor(Math.random() * 400));
 
-thetaStart.forEach(myFunction);
-function myFunction(value, index, array) {
+thetaStart.forEach(KuiperGen);
+function KuiperGen(value, index, array) {
     Kuiper[index] = new Planet(getRndInteger(950, 1050), value, -0.0003, 2, 'gray');
+}
+
+thetaStart2.forEach(AsteroidGen);
+function AsteroidGen(value, index, array) {
+    Asteroid[index] = new Planet(getRndInteger(280, 320), value, -0.0004, 2, 'gray');
 }
 
 function drawKuiper() {
@@ -77,6 +86,14 @@ function drawKuiper() {
         // console.log(key);        // the name of the current key.
         // console.log(Kuiper[key]); // the value of the current key.
         drawPlanet(Kuiper[key].calcPos()[0], Kuiper[key].calcPos()[1], Kuiper[key].radius, Kuiper[key].color);
+    });
+}
+
+function drawAsteroid() {
+    Object.keys(Asteroid).forEach(key => {
+        // console.log(key);        // the name of the current key.
+        // console.log(Kuiper[key]); // the value of the current key.
+        drawPlanet(Asteroid[key].calcPos()[0], Asteroid[key].calcPos()[1], Asteroid[key].radius, Asteroid[key].color);
     });
 }
 
@@ -100,6 +117,7 @@ function draw() {
     saturn.theta += saturn.dtheta;
     uranus.theta += uranus.dtheta;
     neptune.theta += neptune.dtheta;
+    pluto.theta += pluto.dtheta;
 
     drawPlanet(mercury.calcPos()[0], mercury.calcPos()[1], mercury.radius, mercury.color);
     drawPlanet(venus.calcPos()[0], venus.calcPos()[1], venus.radius, venus.color);
@@ -109,11 +127,17 @@ function draw() {
     drawPlanet(saturn.calcPos()[0], saturn.calcPos()[1], saturn.radius, saturn.color);
     drawPlanet(uranus.calcPos()[0], uranus.calcPos()[1], uranus.radius, uranus.color);
     drawPlanet(neptune.calcPos()[0], neptune.calcPos()[1], neptune.radius, neptune.color);
+    drawPlanet(pluto.calcPos()[0], pluto.calcPos()[1], pluto.radius, pluto.color);
 
     drawKuiper()
+    drawAsteroid()
 
     Object.keys(Kuiper).forEach(key => {
         Kuiper[key].theta += Kuiper[key].dtheta;
+    });
+
+    Object.keys(Asteroid).forEach(key => {
+        Asteroid[key].theta += Asteroid[key].dtheta;
     });
 }
 
