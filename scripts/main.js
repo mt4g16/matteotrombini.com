@@ -35,19 +35,41 @@ class Planet {
         const coords = [0, 0];
         coords[0] = this.orbitHeight * Math.cos(this.theta) + x;
         coords[1] = this.orbitHeight * Math.sin(this.theta) + y;
+        // console.log(coords)
         return coords;
     }
+}
+
+class Moon {
+    constructor(planet, orbitHeight, theta, dtheta, radius, color) {
+        this.planet = planet;
+        this.orbitHeight = orbitHeight;
+        this.theta = theta;
+        this.dtheta = dtheta;
+        this.radius = radius;
+        this.color = color;
+    }
+
+    calcPos() {
+        // console.log(this.planet.calcPos()[0], this.planet.calcPos()[1]);
+        const coords = [0, 0];
+        coords[0] = this.orbitHeight * Math.cos(this.theta) + this.planet.calcPos()[0];
+        coords[1] = this.orbitHeight * Math.sin(this.theta) + this.planet.calcPos()[1];
+        return coords;
+    }
+
 }
 
 var mercury = new Planet(55, 10, -0.003, 4, '#998e8d');
 var venus = new Planet(70, 2, -0.0045, 6, '#bebf8e');
 var earth = new Planet(150, 8, -0.0013, 10, '#3260a8');
+var moon = new Moon(earth, 20, 0, -0.015, 3, 'white');
 var mars = new Planet(250, 40, -0.0011, 7, '#a84e32');
 var jupiter = new Planet(380, 20, -0.00038, 18, '#c48114')
 var saturn = new Planet(400, 23, -0.000235, 14, '#ead6b8')
 var uranus = new Planet(500, 16, -0.0002, 12, '#2fcc90')
 var neptune = new Planet(550, 10, -0.0001, 13, '#145eb8')
-var pluto = new Planet(1000, 10, -0.0003, 2, 'purple')
+var pluto = new Planet(1000, 10, -0.0003, 2, '#714375')
 
 
 // var asteroid = new Planet(1000, 10, -0.01, 2, 'gray')
@@ -97,6 +119,8 @@ function drawAsteroid() {
     });
 }
 
+
+
 function drawPlanet(x1, y1, r1, color1) {
     ctx.beginPath();
     ctx.arc(x1, y1, r1, 0, Math.PI * 2);
@@ -114,6 +138,14 @@ function drawRings(x1, y1, r2, t2, color1) {
     ctx.closePath();
 }
 
+function drawMoon(x1, y1, r1, color1) {
+    ctx.beginPath();
+    ctx.arc(x1, y1, r1, 0, Math.PI * 2);
+    ctx.fillStyle = color1;
+    ctx.fill();
+    ctx.closePath();
+}
+
 function draw() {
     setCanvas()
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -121,6 +153,7 @@ function draw() {
     mercury.theta += mercury.dtheta;
     venus.theta += venus.dtheta;
     earth.theta += earth.dtheta;
+    moon.theta += moon.dtheta;
     mars.theta += mars.dtheta;
     jupiter.theta += jupiter.dtheta;
     saturn.theta += saturn.dtheta;
@@ -131,6 +164,7 @@ function draw() {
     drawPlanet(mercury.calcPos()[0], mercury.calcPos()[1], mercury.radius, mercury.color);
     drawPlanet(venus.calcPos()[0], venus.calcPos()[1], venus.radius, venus.color);
     drawPlanet(earth.calcPos()[0], earth.calcPos()[1], earth.radius, earth.color);
+    drawMoon(moon.calcPos()[0], moon.calcPos()[1], moon.radius, moon.color);
     drawPlanet(mars.calcPos()[0], mars.calcPos()[1], mars.radius, mars.color);
     drawPlanet(jupiter.calcPos()[0], jupiter.calcPos()[1], jupiter.radius, jupiter.color);
     drawPlanet(saturn.calcPos()[0], saturn.calcPos()[1], saturn.radius, saturn.color);
