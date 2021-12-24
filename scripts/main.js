@@ -41,12 +41,12 @@ class Planet {
 
 var mercury = new Planet(55, 10, -0.003, 4, '#998e8d');
 var venus = new Planet(70, 2, -0.0045, 6, '#bebf8e');
-var earth = new Planet(150, 8, -0.001, 10, '#3260a8');
-var mars = new Planet(250, 40, -0.0015, 7, '#a84e32');
-var jupiter = new Planet(380, 20, -0.0002, 18, '#c48114')
-var saturn = new Planet(400, 44, -0.0002, 14, '#6b5e23')
-var uranus = new Planet(500, 12, -0.0002, 12, '#709187')
-var neptune = new Planet(550, 10, -0.0002, 13, '#145eb8')
+var earth = new Planet(150, 8, -0.0013, 10, '#3260a8');
+var mars = new Planet(250, 40, -0.0011, 7, '#a84e32');
+var jupiter = new Planet(380, 20, -0.00038, 18, '#c48114')
+var saturn = new Planet(400, 23, -0.000235, 14, '#ead6b8')
+var uranus = new Planet(500, 16, -0.0002, 12, '#2fcc90')
+var neptune = new Planet(550, 10, -0.0001, 13, '#145eb8')
 var pluto = new Planet(1000, 10, -0.0003, 2, 'purple')
 
 
@@ -105,6 +105,15 @@ function drawPlanet(x1, y1, r1, color1) {
     ctx.closePath();
 }
 
+function drawRings(x1, y1, r2, t2, color1) {
+    ctx.beginPath();
+    ctx.arc(x1, y1, r2, 0, 2 * Math.PI);
+    ctx.lineWidth = t2;
+    ctx.strokeStyle = color1;
+    ctx.stroke();
+    ctx.closePath();
+}
+
 function draw() {
     setCanvas()
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -125,6 +134,8 @@ function draw() {
     drawPlanet(mars.calcPos()[0], mars.calcPos()[1], mars.radius, mars.color);
     drawPlanet(jupiter.calcPos()[0], jupiter.calcPos()[1], jupiter.radius, jupiter.color);
     drawPlanet(saturn.calcPos()[0], saturn.calcPos()[1], saturn.radius, saturn.color);
+    drawRings(saturn.calcPos()[0], saturn.calcPos()[1], 25, 2, '#ab604a');
+    drawRings(saturn.calcPos()[0], saturn.calcPos()[1], 30, 2, '#bfbdaf');
     drawPlanet(uranus.calcPos()[0], uranus.calcPos()[1], uranus.radius, uranus.color);
     drawPlanet(neptune.calcPos()[0], neptune.calcPos()[1], neptune.radius, neptune.color);
     drawPlanet(pluto.calcPos()[0], pluto.calcPos()[1], pluto.radius, pluto.color);
