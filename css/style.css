@@ -234,37 +234,6 @@ nav .mobile_dropdown {
     padding-left: 5vw;
 }
 
-.animate_slideIn {
-    -webkit-animation: slideIn 2s forwards;
-    -moz-animation: slideIn 2s forwards;
-    animation: slideIn 2s forwards;
-}
-
-.animate_slideOut {
-    -webkit-animation: slideOut 2s forwards;
-    -moz-animation: slideOut 2s forwards;
-    animation: slideOut 2s forwards;
-}
-
-@-webkit-keyframes slideOut {
-    0% {
-      transform: translateX(-900px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-@-webkit-keyframes slideIn {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-900px);
-    }
-  }
-
-
 .bar {
     text-align: right;
     padding-right: 10vw;
