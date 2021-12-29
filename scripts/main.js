@@ -1,15 +1,17 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var dtheta = 0.01;
-x = window.innerWidth / 2;
-y = window.innerHeight / 2;
+
+x = window.visualViewport.width / 2;
+y = window.visualViewport.height / 2;
 
 function setCanvas() {
-    ctx.canvas.width = window.innerWidth;
-    ctx.canvas.height = window.innerHeight;
-    x = 3 * window.innerWidth / 4;
-    y = window.innerHeight / 2;
+    ctx.canvas.width = window.visualViewport.width;
+    ctx.canvas.height = window.visualViewport.height;
+    x = 3 * window.visualViewport.width / 4;
+    y = window.visualViewport.height / 2;
     // ctx.translate(width / 2, height / 2); // now 0,0 is the center of the canvas.
+    // console.log(ctx.canvas.width, ctx.canvas.height)
 }
 
 function resizeCanvas() {
