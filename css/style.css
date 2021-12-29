@@ -67,6 +67,7 @@ a:hover, a:active { text-decoration: none; }
     /* padding: 3px; */
 }
 
+
 #menu {
     border-bottom: 1px solid var(--black-color);
     height: 40px;
