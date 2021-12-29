@@ -21,7 +21,7 @@
         <nav>
             <div class="nav_wrapper2">
                 <div id="logo2">
-                    <a href='index.html'>Matteo Trombini</a>
+                    <a href='index.html'> <span style="background-color: #99919142">Matteo Trombini</span></a>
                 </div>
 
                 <div class="nav_buttons" , id="menu">
@@ -46,6 +46,56 @@
             </div>
         </div>
 
+        <div class="outer_projects_titles" id="project_buttons">
+            <div class="projects_titles">
+                <div class="p_title" onmouseover="show('p1s')" onmouseout="hide('p1s')"
+                    onclick="location.href='fixedwing.html';">
+                    <div>Fixed-Wing Aircraft</div>
+                </div>
+
+                <div class="p_title" onmouseover="show('p2s')" onmouseout="hide('p2s')"
+                    onclick="location.href='cansat.html';">
+                    <div>CanSat Texas 2019</div>
+                </div>
+
+                <div class="p_title" onmouseover="show('p3s')" onmouseout="hide('p3s')"
+                    onclick="location.href='transport.html';">
+                    <div>Transportation Optimization</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="blurb_outer" id="blurb">
+            <div class="blurb_text">
+                <h1>
+                    Hi there,
+                </h1>
+                <p>
+                    My name is Matteo Trombini, and I’m a recent aerospace engineering graduate from the University
+                    of Southampton. Prior to this, I completed my IB diploma in Zurich, Switzerland, where I was
+                    born. Being the son of Italian parents and having attended an international school has given me
+                    a unique perspective as a global citizen, and gave me the privilege to work with people from
+                    diverse backgrounds.
+                </p>
+                <p>
+                    Throughout high school I was deeply interested in a variety of subjects ranging from math and
+                    physics, the natural sciences, and languages. I decided to study engineering as it would combine
+                    my interests in technology and math with my passion for aircraft and flying. I immediately loved
+                    my course the minute I started it, and my interest only grew as I continued my studies.
+                    Throughout my bachelor I also discovered a new passion: computer science and programming. I
+                    quickly began to incorporate python into all my coursework and eventually pursued a
+                    computational dissertation where I developed an automated flight protocol.
+                </p>
+                <p>
+                    My interest in programming rapidly developed into other branches of computer science,
+                    particularly web development. I built this website from scratch using HTML, CSS and JS to create
+                    a platform to showcase past and future projects I have and will work on. Feel free to contact me
+                    at any time using the link in the navbar, or download my CV using the button right next to it.
+                    Thanks for stopping by!
+                </p>
+            </div>
+        </div>
+
         <div class="footer">
             <div class="footer_links">
                 <a href="mailto: trombinimatteo@gmail.com"><i class="fas fa-at fa-lg"></i></a>
@@ -56,8 +106,8 @@
             </div>
 
             <div class="bar">
-                <button class="btn bio" onclick="ani()">Bio</button>
-                <button class="btn proj" onclick="window.location.href='pages/projects.html'">Projects</button>
+                <button class="btn bio" onclick="ani();fadeBlurb()">Bio</button>
+                <button class="btn proj" onclick="ani();fade()">Projects</button>
                 <button class="btn code" onclick="window.open('https://github.com/mt4g16','_blank')">GitHub</button>
             </div>
         </div>

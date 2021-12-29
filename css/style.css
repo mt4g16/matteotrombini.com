@@ -45,6 +45,94 @@ a:hover, a:active { text-decoration: none; }
 }
 
 
+/* Project Title */
+#project_buttons {
+    opacity: 0;
+}
+
+.outer_projects_titles {
+    overflow: hidden;
+    /* position: relative; */
+}
+
+.projects_titles {
+    /* margin: 0 10vh; */
+    position: absolute;
+    /* height: 100px; */
+    /* width: 100px; */
+    /* left: -150px; */
+    left: 10vw;
+    bottom: 40vh;
+    overflow: hidden;
+}
+
+.p_title {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+    background-color: var(--lightred-color);
+    border: 5px solid var(--marsred-color);
+}
+
+.p_title:hover {
+    border: 5px solid var(--blue-color);
+    background-color: var(--lightblue-color);
+    color: var(--white-color);
+}
+
+.animate_fadeIn {
+    animation-name: FadeIn;
+  animation-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.animate_fadeOut {
+    opacity: 0;
+    animation-name: FadeOut;
+    animation-duration: 1s;
+    transition-timing-function: linear;
+}
+
+@keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@keyframes FadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+/* Blurb Settings */
+
+#blurb {
+    opacity: 0;
+}
+
+.blurb_outer {
+    position: absolute;
+    background-color: rgba(202, 199, 199, 0.89);
+    width: 45vw;
+    left: 5vw;
+    top: 100px;
+    padding: 10px;
+}
+
+.blurb_text {
+
+}
+
 /* Navbar Settings */
 #logo {
     font-size: calc(20px + 1.3vw);
