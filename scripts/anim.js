@@ -57,9 +57,9 @@ function fadeBlurb() {
 
 
     if (toggle2 == 0) {
-        document.getElementById('project_buttons').classList.remove('animate_fadeIn');
-        document.getElementById('project_buttons').classList.add('animate_fadeOut');
-        document.getElementById("project_buttons").style.opacity = 0;
+        document.getElementById('blurb').classList.remove('animate_fadeIn');
+        document.getElementById('blurb').classList.add('animate_fadeOut');
+        document.getElementById("blurb").style.opacity = 0;
         toggle2 = 1;
         console.log(toggle);
         return
@@ -67,9 +67,9 @@ function fadeBlurb() {
     }
 
     if (toggle2 == 1) {
-        document.getElementById('project_buttons').classList.remove('animate_fadeOut');
-        document.getElementById('project_buttons').classList.add('animate_fadeIn');
-        document.getElementById("project_buttons").style.opacity = 1;
+        document.getElementById('blurb').classList.remove('animate_fadeOut');
+        document.getElementById('blurb').classList.add('animate_fadeIn');
+        document.getElementById("blurb").style.opacity = 1;
 
         toggle2 = 0;
         console.log(toggle);
