@@ -2,12 +2,14 @@
     --black-color: black;
     --white-color: white;
     --space-color:rgb(41, 40, 40);
+    --transparent-gray-color: #99919142;
+    --transparent-white-color: rgba(255, 255, 255, 0.877);
     --lightgray-color: #979797;
     --offwhite-color: #E7E6E6;
     --gray-color: #c2bbbb;
     --green-color: #6a9749;
     --yellow-color: #c4a64b;
-    --blue-color: #4174a7;
+    --blue-color: #145eb8;
     --lightblue-color: #778ceb;
     --marsred-color: #1e0daf;
     --lightred-color: #4174a7;
